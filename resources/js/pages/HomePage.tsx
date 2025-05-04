@@ -1,19 +1,11 @@
+// resources/js/pages/HomePage.tsx
 import React, { lazy, Suspense } from 'react';
 import { Head, Link } from '@inertiajs/react';
 import Layout from '../layouts/Layout';
 
 // Lazy-loaded content
 const Testimonials = lazy(() => import('@/components/Testimonials'));
-const FAQs         = lazy(() => import('@/components/FAQs'));
-
-// Placeholder AdSlot—swap this out for your AdSense wrapper
-const AdSlot: React.FC<{ id: string; className?: string }> = ({ id, className }) => (
-  <div className={className} data-ad-slot={id}>
-    <div className="w-full h-full bg-gray-200 flex items-center justify-center italic text-gray-500">
-      Ad Slot: {id}
-    </div>
-  </div>
-);
+const FAQs = lazy(() => import('@/components/FAQs'));
 
 const HomePage: React.FC = () => {
   const structuredData = {
@@ -75,11 +67,6 @@ const HomePage: React.FC = () => {
           <Link href="/exams" className="bg-yellow-300 text-green-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition">
             Start Reviewing Now
           </Link>
-
-          {/* Top leaderboard (728×90) */}
-          <div className="mt-8 mx-auto max-w-4xl h-24">
-            <AdSlot id="top-leaderboard" className="w-full h-full" />
-          </div>
         </section>
 
         {/* Why Choose */}
@@ -92,13 +79,6 @@ const HomePage: React.FC = () => {
             <li className="p-4 border rounded-lg hover:shadow-sm">✔️ Track scores and monitor progress</li>
           </ul>
         </section>
-
-        {/* Mid-page 300×250 */}
-        <div className="max-w-7xl mx-auto px-6 mb-12">
-          <div className="mx-auto w-full md:w-1/2 h-64">
-            <AdSlot id="midpage-300x250" className="w-full h-full" />
-          </div>
-        </div>
 
         {/* Featured Exams */}
         <section className="bg-gray-100 py-12">
@@ -132,15 +112,10 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials + after-testimonial banner */}
+        {/* Testimonials + FAQs */}
         <Suspense fallback={<div className="py-12 text-center">Loading testimonials…</div>}>
           <Testimonials />
         </Suspense>
-        <div className="max-w-7xl mx-auto px-6 my-12 h-20">
-          <AdSlot id="after-testimonials-mobile" className="w-full h-full" />
-        </div>
-
-        {/* FAQs */}
         <Suspense fallback={<div className="py-12 text-center">Loading FAQs…</div>}>
           <FAQs />
         </Suspense>

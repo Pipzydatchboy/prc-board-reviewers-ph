@@ -14,22 +14,15 @@ const navItems = [
 ];
 
 /**
- * Global layout wrapper: includes Head for meta and AdSense script,
- * navbar, footer, and main content area.
+ * Global layout wrapper: navbar (desktop + mobile), footer, and main content area.
  */
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/* Global head: meta tags, AdSense script */}
-      <Head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-5380449482931469"
-          crossOrigin="anonymous"
-        ></script>
-      </Head>
+      {/* Inertia Head (for page titles, meta tags, etc.) */}
+      <Head />
 
       {/* Navbar */}
       <nav className="bg-green-700 text-white shadow-md">
@@ -38,6 +31,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Link href="/" className="text-2xl font-bold">
               PRC Board Reviewers PH
             </Link>
+
+            {/* Desktop menu */}
             <div className="hidden md:flex space-x-6">
               {navItems.map(item => (
                 <Link
@@ -49,6 +44,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </Link>
               ))}
             </div>
+
+            {/* Mobile toggle */}
             <button
               className="md:hidden focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
@@ -58,11 +55,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </button>
           </div>
         </div>
+
         {/* Mobile menu panel */}
-        <div className={`md:hidden overflow-hidden transition-max-height duration-300 ${
-          isOpen ? 'max-h-40' : 'max-h-0'
-        }`}>
-          <div className="px-4 pt-2 pb-4 space-y-2 bg-green-600">
+        {isOpen && (
+          <div className="md:hidden px-4 pt-2 pb-4 bg-green-600">
             {navItems.map(item => (
               <Link
                 key={item.label}
@@ -73,7 +69,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </Link>
             ))}
           </div>
-        </div>
+        )}
       </nav>
 
       {/* Main content area */}

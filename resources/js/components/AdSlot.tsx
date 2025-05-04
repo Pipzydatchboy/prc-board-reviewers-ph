@@ -1,19 +1,32 @@
+// resources/js/components/AdSlot.tsx
 import React, { useEffect, useRef } from 'react';
 
-/**
- * AdSlot – a manual AdSense slot component for React/Inertia
- *
- * Don't forget to include this in your <head> (e.g. in Layout.tsx or Blade):
- * <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
- */
-
 type AdSlotProps = {
-  /** Your AdSense ad unit slot ID */
+  /** your AdSense slot ID */
   slotId: string;
-  /** Optional wrapper classes */
+  /** optional extra wrapper classes */
   className?: string;
-  /** Optional inline styles */
+  /** optional inline styles */
   style?: React.CSSProperties;
+};
+
+const ADSENSE_CLIENT = 'ca-pub-5380449482931469';
+const ADSENSE_SRC = `https://pagead2.googlesyndication.com/pagead/js?client=${ADSENSE_CLIENT}`;
+
+const loadAdsenseScript = (): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src^="${ADSENSE_SRC}"]`)) {
+      resolve();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = ADSENSE_SRC;
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Failed to load adsbygoogle script'));
+    document.head.appendChild(script);
+  });
 };
 
 const AdSlot: React.FC<AdSlotProps> = ({
@@ -24,12 +37,24 @@ const AdSlot: React.FC<AdSlotProps> = ({
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.warn('AdSense slot push failed:', e);
-    }
+    let mounted = true;
+    loadAdsenseScript()
+      .then(() => {
+        if (!mounted) return;
+        try {
+          // @ts-ignore
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.warn('Adsense push failed', e);
+        }
+      })
+      .catch(err => {
+        console.error('Adsense script load error:', err);
+      });
+
+    return () => {
+      mounted = false;
+    };
   }, [slotId]);
 
   return (
@@ -37,11 +62,11 @@ const AdSlot: React.FC<AdSlotProps> = ({
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
-        data-ad-client="ca-pub-5380449482931469"
+        data-ad-client={ADSENSE_CLIENT}
         data-ad-slot={slotId}
         data-ad-format="auto"
         data-full-width-responsive="true"
-      ></ins>
+      />
     </div>
   );
 };
