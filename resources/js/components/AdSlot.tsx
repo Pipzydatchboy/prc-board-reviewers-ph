@@ -1,12 +1,18 @@
-// resources/js/components/AdSlot.tsx
 import React, { useEffect, useRef } from 'react';
 
+/**
+ * AdSlot – a manual AdSense slot component for React/Inertia
+ *
+ * Don't forget to include this in your <head> (e.g. in Layout.tsx or Blade):
+ * <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ */
+
 type AdSlotProps = {
-  /** your AdSense slot ID */
+  /** Your AdSense ad unit slot ID */
   slotId: string;
-  /** optional extra wrapper classes */
+  /** Optional wrapper classes */
   className?: string;
-  /** optional inline styles */
+  /** Optional inline styles */
   style?: React.CSSProperties;
 };
 
@@ -22,7 +28,7 @@ const AdSlot: React.FC<AdSlotProps> = ({
       // @ts-ignore
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
-      console.warn('Adsense push failed', e);
+      console.warn('AdSense slot push failed:', e);
     }
   }, [slotId]);
 
@@ -35,7 +41,7 @@ const AdSlot: React.FC<AdSlotProps> = ({
         data-ad-slot={slotId}
         data-ad-format="auto"
         data-full-width-responsive="true"
-      />
+      ></ins>
     </div>
   );
 };

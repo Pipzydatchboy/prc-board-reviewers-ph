@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Head, Link } from '@inertiajs/react';
 
+// Layout wraps each page, includes global scripts & meta (e.g. AdSense)
+
 type LayoutProps = {
   children: React.ReactNode;
 };
@@ -18,13 +20,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      {/* Global head for AdSense & meta */}
+      {/*
+        Global head for meta tags and AdSense.
+        Note: script tags must have explicit closing tags in React.
+      */}
       <Head>
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5380449482931469"
+          src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-5380449482931469"
           crossOrigin="anonymous"
-        />
+        ></script>
       </Head>
 
       {/* Navbar */}
@@ -60,7 +65,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
 
         {/* Mobile menu panel */}
-        <div className={`md:hidden overflow-hidden transition-max-height duration-300 ${isOpen ? 'max-h-40' : 'max-h-0'}`}>
+        <div
+          className={`md:hidden overflow-hidden transition-max-height duration-300 ${
+            isOpen ? 'max-h-40' : 'max-h-0'
+          }`}
+        >
           <div className="px-4 pt-2 pb-4 space-y-2 bg-green-600">
             {navItems.map(item => (
               <Link
@@ -75,7 +84,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </nav>
 
-      {/* Main content container */}
+      {/* Main content */}
       <main className="flex-grow bg-gray-50 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {children}
