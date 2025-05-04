@@ -1,7 +1,7 @@
+// resources/js/pages/Parts.tsx
 import React, { useMemo, lazy, Suspense } from 'react';
 import Layout from '../layouts/Layout';
-import { Head } from '@inertiajs/react';       // <-- import Head
-import LazyAdSlot from '../components/LazyAdSlot'; // Lazy-loaded ad wrapper
+import { Head } from '@inertiajs/react';
 
 // Lazy load components
 const PartsGrid   = lazy(() => import('../components/PartsGrid'));
@@ -51,22 +51,10 @@ const Parts: React.FC<PartsProps> = ({ parts, subjectName, examId, subjectId, ex
           🗂️ {subjectName} – Parts List
         </h1>
 
-        {/* Top Leaderboard Ad */}
-        <div className="mb-8">
-          <LazyAdSlot slotId="parts-top-leaderboard" className="w-full h-24" />
-        </div>
-
         {/* Parts Grid */}
-        <Suspense fallback={<div className="text-center py-6">Loading Parts…</div>}>
+        <Suspense fallback={<div className="text-center py-6">Loading parts…</div>}>
           <PartsGrid parts={memoizedParts} examId={examId} subjectId={subjectId} />
         </Suspense>
-
-        {/* Bottom Medium Rectangle Ad */}
-        <div className="mt-12 flex justify-center">
-          <div className="w-full md:w-1/2 h-64">
-            <LazyAdSlot slotId="parts-bottom-rectangle" className="w-full h-full" />
-          </div>
-        </div>
       </div>
     </Layout>
   );
