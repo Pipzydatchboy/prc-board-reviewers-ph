@@ -1,12 +1,10 @@
 // resources/js/layouts/Layout.tsx
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Head, Link } from '@inertiajs/react';
 
-// Layout wraps each page, includes global scripts & meta (e.g. AdSense)
-
-type LayoutProps = {
-  children: React.ReactNode;
-};
+interface LayoutProps {
+  children: ReactNode;
+}
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -15,15 +13,16 @@ const navItems = [
   { label: 'Donation', href: '/donation' },
 ];
 
+/**
+ * Global layout wrapper: includes Head for meta and AdSense script,
+ * navbar, footer, and main content area.
+ */
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/*
-        Global head for meta tags and AdSense.
-        Note: script tags must have explicit closing tags in React.
-      */}
+      {/* Global head: meta tags, AdSense script */}
       <Head>
         <script
           async
@@ -39,8 +38,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Link href="/" className="text-2xl font-bold">
               PRC Board Reviewers PH
             </Link>
-
-            {/* Desktop menu */}
             <div className="hidden md:flex space-x-6">
               {navItems.map(item => (
                 <Link
@@ -52,8 +49,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </Link>
               ))}
             </div>
-
-            {/* Mobile hamburger */}
             <button
               className="md:hidden focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
@@ -63,13 +58,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </button>
           </div>
         </div>
-
         {/* Mobile menu panel */}
-        <div
-          className={`md:hidden overflow-hidden transition-max-height duration-300 ${
-            isOpen ? 'max-h-40' : 'max-h-0'
-          }`}
-        >
+        <div className={`md:hidden overflow-hidden transition-max-height duration-300 ${
+          isOpen ? 'max-h-40' : 'max-h-0'
+        }`}>
           <div className="px-4 pt-2 pb-4 space-y-2 bg-green-600">
             {navItems.map(item => (
               <Link
@@ -84,7 +76,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </nav>
 
-      {/* Main content */}
+      {/* Main content area */}
       <main className="flex-grow bg-gray-50 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {children}
