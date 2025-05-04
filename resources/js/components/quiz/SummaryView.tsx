@@ -125,7 +125,7 @@ const SummaryView: React.FC<Props> = ({
           <div className="bg-white rounded-lg p-6 max-w-sm w-full text-center">
             <h2 className="text-xl font-semibold mb-4">Support Our Site</h2>
             <p className="mb-4">
-              If you find this site helpful, you can donate any amount by scanning the QR code below.
+              If you find this site helpful, you can donate any amount by scanning the Gcash QR code below.
             </p>
             <img
               src="/images/qr-donate.png"
