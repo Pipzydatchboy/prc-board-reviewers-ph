@@ -10,17 +10,15 @@ import React, {
 } from 'react';
 import Layout from '../layouts/Layout';
 import { Head, router } from '@inertiajs/react';
-import PopUpAd from '../components/PopUpAd';
-import AdSlot from '../components/AdSlot';
 import Modal from '../components/Modal'; // For Oops modal
 
 // Lazy-load heavy components
-const Breadcrumbs = lazy(() => import('../components/breadcrumbs'));
-const QuestionView = lazy(() => import('../components/quiz/QuestionView'));
-const SummaryView = lazy(() => import('../components/quiz/SummaryView'));
-const IntroModal = lazy(() => import('../components/modals/IntroModal'));
-const RetakeModal = lazy(() => import('../components/modals/RetakeModal'));
-const NextModal = lazy(() => import('../components/modals/NextModal'));
+const Breadcrumbs   = lazy(() => import('../components/breadcrumbs'));
+const QuestionView  = lazy(() => import('../components/quiz/QuestionView'));
+const SummaryView   = lazy(() => import('../components/quiz/SummaryView'));
+const IntroModal    = lazy(() => import('../components/modals/IntroModal'));
+const RetakeModal   = lazy(() => import('../components/modals/RetakeModal'));
+const NextModal     = lazy(() => import('../components/modals/NextModal'));
 
 export type Question = { id: number; question: string; choices: string[]; answer: string; explanation: string; };
 export interface Answer { questionId: number; question: string; choices: string[]; selected: string; correct: string; explanation: string; }
@@ -42,7 +40,6 @@ const Questions: React.FC<QuestionsProps> = ({ questions, subjectId, subjectName
   const [userAnswers, setUserAnswers] = useState<Answer[]>([]);
   const [elapsedTime, setElapsedTime] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const [showAd, setShowAd] = useState(false);
 
   // Handlers
   const handleStart = () => setShowIntro(false);
@@ -55,7 +52,6 @@ const Questions: React.FC<QuestionsProps> = ({ questions, subjectId, subjectName
   const performNextPart = () => {
     setShowNextEncouragement(false);
     const key = `prc_unlocked_${examId}_${subjectId}`;
-    // always seed with part 1 unlocked
     const saved: number[] = JSON.parse(localStorage.getItem(key) || '[1]');
     const next = part + 1;
     if (!saved.includes(next)) {
@@ -76,12 +72,6 @@ const Questions: React.FC<QuestionsProps> = ({ questions, subjectId, subjectName
     setUserAnswers([]);
   };
 
-  // Ad trigger points
-  const adPoints = useMemo(() => {
-    const n = shuffledQuestions.length;
-    return [Math.floor(n * 0.25), Math.floor(n * 0.75)];
-  }, [shuffledQuestions.length]);
-
   // Timer effect
   useEffect(() => {
     timerRef.current = setInterval(() => setElapsedTime(t => t + 1), 1000);
@@ -99,19 +89,10 @@ const Questions: React.FC<QuestionsProps> = ({ questions, subjectId, subjectName
       setShowSummary(true);
     }
   }, [currentIndex, shuffledQuestions.length]);
-  const handleNext = useCallback(() => {
-    if (adPoints.includes(currentIndex + 1)) setShowAd(true);
-    else goNext();
-  }, [currentIndex, adPoints, goNext]);
-  const handleAdClose = useCallback(() => { setShowAd(false); goNext(); }, [goNext]);
+  const handleNext = useCallback(() => goNext(), [goNext]);
   const handleChoice = useCallback((choice: string) => {
-    // Record selected choice
     setSelectedChoice(choice);
-    // Update score if correct
-    if (choice === currentQuestion.answer) {
-      setScore(s => s + 1);
-    }
-    // Record the answer object
+    if (choice === currentQuestion.answer) setScore(s => s + 1);
     setUserAnswers(prev => [
       ...prev,
       {
@@ -123,7 +104,6 @@ const Questions: React.FC<QuestionsProps> = ({ questions, subjectId, subjectName
         explanation: currentQuestion.explanation,
       },
     ]);
-    // Save progress to localStorage
     try {
       const progressKey = `prc_progress_${examId}_${subjectId}_${part}`;
       const answeredCount = currentIndex + 1;
@@ -165,10 +145,6 @@ const Questions: React.FC<QuestionsProps> = ({ questions, subjectId, subjectName
           <Suspense fallback={<div className="mb-4 h-4 w-32 bg-gray-200 animate-pulse rounded" />}>
             <Breadcrumbs items={breadcrumbs} />
           </Suspense>
-
-          <PopUpAd isOpen={showAd} onClose={handleAdClose}>
-            <AdSlot slotId="questions-popup-banner" className="w-full h-64" />
-          </PopUpAd>
 
           <Suspense fallback={<div className="animate-pulse space-y-4 py-10"><div className="h-6 bg-gray-200 rounded w-3/4" /><div className="h-48 bg-gray-200 rounded w-full" /><div className="h-10 bg-gray-200 rounded w-1/2" /></div>}>
             {showSummary ? (

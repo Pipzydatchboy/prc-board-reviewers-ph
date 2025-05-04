@@ -1,6 +1,7 @@
+
 // resources/js/components/quiz/SummaryView.tsx
 import React, { useState } from 'react';
-import LazyAdSlot from '../LazyAdSlot';  // correct relative path
+import type { FC } from 'react';
 
 type Answer = {
   question: string;
@@ -21,7 +22,7 @@ type Props = {
   userAnswers: Answer[];
 };
 
-const SummaryView: React.FC<Props> = ({
+const SummaryView: FC<Props> = ({
   score,
   total,
   percentage,
@@ -35,7 +36,6 @@ const SummaryView: React.FC<Props> = ({
 
   const handleContinuePrint = () => {
     setShowDonate(false);
-    // Delay printing to allow modal to hide
     setTimeout(() => window.print(), 100);
   };
 
@@ -43,11 +43,6 @@ const SummaryView: React.FC<Props> = ({
     <>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-4 text-green-700">✅ Summary</h1>
-
-        {/* Top leaderboard ad */}
-        <div className="mb-6">
-          <LazyAdSlot slotId="summary-top-leaderboard" className="w-full h-24" />
-        </div>
 
         <div className="bg-white rounded-2xl shadow p-6 space-y-1">
           <p>Points: {score} / {total}</p>
@@ -80,13 +75,6 @@ const SummaryView: React.FC<Props> = ({
           </button>
         </div>
 
-        {/* Mid-page rectangle ad */}
-        <div className="my-8 flex justify-center">
-          <div className="w-full md:w-1/2 h-64">
-            <LazyAdSlot slotId="summary-mid-rectangle" className="w-full h-full" />
-          </div>
-        </div>
-
         <div className="mt-8">
           <h2 className="text-2xl font-bold mb-4">Review of Answers:</h2>
           {userAnswers.map((ans, idx) => (
@@ -111,11 +99,6 @@ const SummaryView: React.FC<Props> = ({
               <p className="text-sm italic mt-1">{ans.explanation}</p>
             </div>
           ))}
-        </div>
-
-        {/* Bottom banner ad */}
-        <div className="mt-8 mb-12">
-          <LazyAdSlot slotId="summary-bottom-banner" className="w-full h-24" />
         </div>
       </div>
 

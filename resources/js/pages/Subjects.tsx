@@ -1,8 +1,8 @@
-import React, { lazy, Suspense } from 'react';
+// resources/js/pages/Subjects.tsx
+import React from 'react';
 import Layout from '../layouts/Layout';
 import { Link, Head } from '@inertiajs/react';
 import Breadcrumbs from '../components/breadcrumbs';
-import LazyAdSlot from '../components/LazyAdSlot';
 
 type Subject = { id: number; name: string };
 type SubjectsProps = {
@@ -20,7 +20,6 @@ const Subjects: React.FC<SubjectsProps> = ({ subjects, examId, examName }) => {
 
   return (
     <Layout>
-      {/* Set page title via prop */}
       <Head title={`${examName} Subjects | PRC Board Reviewers PH`}>
         <meta
           name="description"
@@ -39,11 +38,6 @@ const Subjects: React.FC<SubjectsProps> = ({ subjects, examId, examName }) => {
           📖 {examName} Subjects
         </h1>
 
-        {/* Top Ad */}
-        <div className="mb-8">
-          <LazyAdSlot slotId="top-subjects-leaderboard" className="w-full h-24" />
-        </div>
-
         {/* Subjects Grid */}
         <div className="grid gap-6 md:grid-cols-2">
           {subjects.map((subject) => (
@@ -56,13 +50,6 @@ const Subjects: React.FC<SubjectsProps> = ({ subjects, examId, examName }) => {
               <p className="mt-2 text-gray-500">Start reviewing this subject!</p>
             </Link>
           ))}
-        </div>
-
-        {/* Bottom Ad */}
-        <div className="mt-12 flex justify-center">
-          <div className="w-full md:w-1/2 h-64">
-            <LazyAdSlot slotId="bottom-subjects-rectangle" className="w-full h-full" />
-          </div>
         </div>
       </div>
     </Layout>
