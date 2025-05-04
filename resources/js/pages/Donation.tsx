@@ -32,7 +32,7 @@ const Donation: React.FC = () => {
           <div className="bg-gray-100 rounded-lg p-6 text-center">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Donate via GCash</h2>
             <img
-              src="/images/gcash-qr.png"
+              src="/images/gcash-qr.webp"
               alt="GCash QR Code"
               className="mx-auto w-48 h-48 mb-4"
             />

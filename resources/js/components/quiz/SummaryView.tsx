@@ -128,7 +128,7 @@ const SummaryView: React.FC<Props> = ({
               If you find this site helpful, you can donate any amount by scanning the Gcash QR code below.
             </p>
             <img
-              src="/images/qr-donate.png"
+              src="/images/qr-donate.webp"
               alt="Donation QR Code"
               className="mx-auto w-48 h-48 mb-4"
             />
