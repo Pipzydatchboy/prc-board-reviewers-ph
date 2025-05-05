@@ -141,20 +141,48 @@ const Questions: React.FC<QuestionsProps> = ({ questions, subjectId, subjectName
 
       {/* Main Content */}
       {!(showIntro || showRetakeEncouragement || showNextEncouragement) && (
-        <div className="p-6 max-w-4xl mx-auto">
-          <Suspense fallback={<div className="mb-4 h-4 w-32 bg-gray-200 animate-pulse rounded" />}>
+        <div className="p-6 max-w-4xl mx-auto text-gray-900">
+          <Suspense fallback={<div className="mb-4 h-4 w-32 bg-gray-300 animate-pulse rounded" />}>
             <Breadcrumbs items={breadcrumbs} />
           </Suspense>
 
-          <Suspense fallback={<div className="animate-pulse space-y-4 py-10"><div className="h-6 bg-gray-200 rounded w-3/4" /><div className="h-48 bg-gray-200 rounded w-full" /><div className="h-10 bg-gray-200 rounded w-1/2" /></div>}>
+          <Suspense fallback={
+            <div className="animate-pulse space-y-4 py-10">
+              <div className="h-6 bg-gray-300 rounded w-3/4" />
+              <div className="h-48 bg-gray-300 rounded w-full" />
+              <div className="h-10 bg-gray-300 rounded w-1/2" />
+            </div>
+          }>
             {showSummary ? (
-              <SummaryView score={score} total={shuffledQuestions.length} percentage={percentage} formatElapsedTime={formattedTime} passed={passed} userAnswers={userAnswers} onRetake={handleRetakeClick} onNextPart={handleNextPartClick} />
+              <SummaryView
+                score={score}
+                total={shuffledQuestions.length}
+                percentage={percentage}
+                formatElapsedTime={formattedTime}
+                passed={passed}
+                userAnswers={userAnswers}
+                onRetake={handleRetakeClick}
+                onNextPart={handleNextPartClick}
+              />
             ) : (
-              <QuestionView currentQuestion={currentQuestion} selectedChoice={selectedChoice} onChoiceClick={handleChoice} onNext={handleNext} formatElapsedTime={formattedTime} questionNumber={currentIndex+1} totalQuestions={shuffledQuestions.length} />              
+              <QuestionView
+                currentQuestion={currentQuestion}
+                selectedChoice={selectedChoice}
+                onChoiceClick={handleChoice}
+                onNext={handleNext}
+                formatElapsedTime={formattedTime}
+                questionNumber={currentIndex+1}
+                totalQuestions={shuffledQuestions.length}
+              />
             )}
           </Suspense>
 
-          <Modal isOpen={showModal} onClose={() => setShowModal(false)} title="Oops! 😟" message="You need at least 80% to proceed." />
+          <Modal
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            title="Oops! 😟"
+            message="You need at least 80% to proceed."
+          />
         </div>
       )}
     </Layout>

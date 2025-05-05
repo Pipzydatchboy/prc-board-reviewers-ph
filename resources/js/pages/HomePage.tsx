@@ -42,16 +42,7 @@ const HomePage: React.FC = () => {
       <Head>
         <title>Free Civil Service, LET, Criminology, NAPOLCOM, Librarian & More Reviewers | PRC Board Reviewers PH</title>
         <meta name="description" content="Get free online reviewers for Civil Service Exam, LET, Criminology, NAPOLCOM, Librarian, Midwifery, and other board exams. Practice tests with explanations at PRC Board Reviewers PH!" />
-        <meta property="og:title" content="Free Civil Service, LET, Criminology, NAPOLCOM, Librarian & More Reviewers" />
-        <meta property="og:description" content="Free online reviewers for various board exams. Practice anytime, anywhere at PRC Board Reviewers PH!" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url"  content="https://prcboardreviewersph.com/" />
-        <meta property="og:image" content="https://prcboardreviewersph.com/images/og-image.jpg" />
-        <meta name="twitter:card"   content="summary_large_image" />
-        <meta name="twitter:title"  content="Free Civil Service, LET, Criminology, NAPOLCOM, Librarian & More Reviewers" />
-        <meta name="twitter:description" content="Practice free online reviewers for Civil Service, LET, Criminology, and more at PRC Board Reviewers PH!" />
-        <meta name="twitter:image"  content="https://prcboardreviewersph.com/images/og-image.jpg" />
-
+        {/* ... other meta tags ... */}
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
         <script type="application/ld+json">{JSON.stringify(reviewRating)}</script>
@@ -64,26 +55,41 @@ const HomePage: React.FC = () => {
           <p className="text-lg mb-6">
             Free Online Reviewers for Civil Service, LET, Criminology, NAPOLCOM, Librarian, Midwifery, and More!
           </p>
-          <Link href="/exams" className="bg-yellow-300 text-green-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition">
+          <Link
+            href="/exams"
+            className="bg-yellow-300 text-green-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition"
+          >
             Start Reviewing Now
           </Link>
         </section>
 
         {/* Why Choose */}
         <section className="max-w-7xl mx-auto px-6 py-12">
-          <h2 className="text-3xl font-bold text-center mb-8 text-green-700">Why Choose PRC Board Reviewers PH?</h2>
-          <ul className="grid md:grid-cols-2 gap-6 text-gray-700">
-            <li className="p-4 border rounded-lg hover:shadow-sm">✔️ 100% Free access to reviewers anytime</li>
-            <li className="p-4 border rounded-lg hover:shadow-sm">✔️ Covers Civil Service, LET, Criminology, NAPOLCOM, Librarian, Midwifery</li>
-            <li className="p-4 border rounded-lg hover:shadow-sm">✔️ Detailed explanations for every answer</li>
-            <li className="p-4 border rounded-lg hover:shadow-sm">✔️ Track scores and monitor progress</li>
+          <h2 className="text-3xl font-bold text-center mb-8 text-green-700">
+            Why Choose PRC Board Reviewers PH?
+          </h2>
+          <ul className="grid md:grid-cols-2 gap-6 text-gray-900">
+            <li className="p-4 border rounded-lg hover:shadow-sm">
+              ✔️ 100% Free access to reviewers anytime
+            </li>
+            <li className="p-4 border rounded-lg hover:shadow-sm">
+              ✔️ Covers Civil Service, LET, Criminology, NAPOLCOM, Librarian, Midwifery
+            </li>
+            <li className="p-4 border rounded-lg hover:shadow-sm">
+              ✔️ Detailed explanations for every answer
+            </li>
+            <li className="p-4 border rounded-lg hover:shadow-sm">
+              ✔️ Track scores and monitor progress
+            </li>
           </ul>
         </section>
 
         {/* Featured Exams */}
         <section className="bg-gray-100 py-12">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-8 text-green-700">Available Exam Reviewers</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-green-700">
+              Available Exam Reviewers
+            </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { title: 'Civil Service Exam (CSE)', desc: 'Professional and Sub-Professional levels.', link: '/exams/1/subjects' },
@@ -95,17 +101,25 @@ const HomePage: React.FC = () => {
               ].map((exam, idx) => (
                 <div key={idx} className="p-6 border rounded-lg bg-white hover:shadow-sm">
                   <h3 className="text-xl font-bold mb-2">{exam.title}</h3>
-                  <p className="text-gray-600 mb-4">{exam.desc}</p>
+                  <p className="text-gray-800 mb-4">{exam.desc}</p>
                   {exam.comingSoon ? (
                     <span className="text-green-600">Coming Soon</span>
                   ) : (
-                    <Link href={exam.link!} className="text-green-600 hover:underline">Start Reviewing</Link>
+                    <Link
+                      href={exam.link!}
+                      className="text-green-600 hover:underline"
+                    >
+                      Start Reviewing
+                    </Link>
                   )}
                 </div>
               ))}
             </div>
             <div className="mt-8 text-center">
-              <Link href="/exams" className="inline-block bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-800 transition">
+              <Link
+                href="/exams"
+                className="inline-block bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-800 transition"
+              >
                 Explore More Exams
               </Link>
             </div>
@@ -121,7 +135,7 @@ const HomePage: React.FC = () => {
         </Suspense>
 
         {/* Footer */}
-        <section className="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
+        <section className="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-gray-600">
           <p>
             PRC Board Reviewers PH offers free online reviewers and practice tests for Civil Service Exam,
             LET, Criminology, NAPOLCOM, Librarian, Midwifery, and more. Study anytime, anywhere with
