@@ -249,7 +249,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart7Seeder::class,
 		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart8Seeder::class,
 		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart9Seeder::class,
-		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart10Seeder::class,
+		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart10Seeder::class, */
         
 //CLE - Criminal Jurisprudence and Procedure - ID 21
          \Database\Seeders\CLE\CriminalJurisprudenceAndProcedure\CriminalJurisprudenceAndProcedurePart1Seeder::class, 
@@ -320,7 +320,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart6Seeder::class, 
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart7Seeder::class, 
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart8Seeder::class, 
-		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart9Seeder::class, */
+		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart9Seeder::class, 
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart10Seeder::class, 
 		
 
@@ -332,8 +332,8 @@ class DatabaseSeeder extends Seeder
 	    
 
 
-           /*  \Database\Seeders\SubjectsTableSeeder::class,
-          \Database\Seeders\ExamsTableSeeder::class, */
+             \Database\Seeders\SubjectsTableSeeder::class,
+          \Database\Seeders\ExamsTableSeeder::class, 
              
              
         ]);
