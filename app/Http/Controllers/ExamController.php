@@ -12,6 +12,7 @@ class ExamController extends Controller
         $exams = [
             ['id' => 1, 'name' => 'Civil Service Exam (CSE)'],
             ['id' => 2, 'name' => 'Licensure Examination for Teachers (LET)'],
+            ['id' => 3, 'name' => 'Criminology Licensure Examination (CLE)'],
         ];
 
         return Inertia::render('Exams', [

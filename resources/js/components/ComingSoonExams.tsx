@@ -2,7 +2,6 @@ import React from 'react';
 
 const ComingSoonExams: React.FC = () => {
     const exams = [
-        { name: 'Criminology Licensure Exam' },
         { name: 'NAPOLCOM Exam' },
         { name: 'Librarian Licensure Exam' },
         { name: 'Midwifery Licensure Exam' },

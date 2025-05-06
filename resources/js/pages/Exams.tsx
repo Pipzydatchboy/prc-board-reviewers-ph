@@ -17,7 +17,6 @@ type ExamsProps = {
 const Exams: React.FC<ExamsProps> = ({ exams }) => {
   // hard-coded “coming soon” list
   const comingSoonExams = [
-    'Criminology Licensure Exam',
     'NAPOLCOM Exam',
     'Librarian Licensure Exam',
     'Midwifery Licensure Exam',

@@ -22,7 +22,28 @@ class PartController extends Controller
             4  => 'Verbal Ability',
             5  => 'Clerical Ability',
             // ... LET subjects as before ...
-            19 => 'Specialized Subject: Culture and Arts Education',
+            6  => 'Professional Education',
+            7  => 'General Education',
+            8  => 'pecialized Subject: Early Childhood Education',
+            9  => 'Specialized Subject: Special Needs Education',
+            10  => 'pecialized Subject: English',
+            11  => 'Specialized Subject: Filipino',
+            12  => 'Specialized Subject: Mathematics',
+            13  => 'Specialized Subject: Physical Science',
+            20  => 'Specialized Subject: Biological Science',
+            14  => 'Specialized Subject: Social Studies',
+            15  => 'Specialized Subject: Values Education',
+            16  => 'Specialized Subject: Technology and Livelihood Education',
+            17  => 'Specialized Subject: Technical - Vocational Teacher Education',
+            18  => 'Specialized Subject: Physical Education',
+            19  => 'Specialized Subject: Culture and Arts Education',
+            //CLE Subjects
+            21=>  'Criminal Jurisprudence and Procedure',
+            22=>  'Law Enforcement Administration',
+            23=>  'Crime Detection, Investigation & Prevention',
+            24=>  'Criminalistics',
+            25=>  'Correctional Administration',
+            26=>  'Criminal Sociology, Ethics and Human Relations',
         ];
 
         // Use our map or fallback to whatever is in the DB

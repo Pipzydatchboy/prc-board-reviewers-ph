@@ -41,6 +41,19 @@ class SubjectController extends Controller
 
                 // Add more specialized subjects if needed
             ];
+
+        } elseif ($examId == 3) { // CLE
+            $examName = 'Criminilogy Licensure Examination (CLE)';
+            $subjects = [
+                ['id' => 21, 'name' => 'Criminal Jurisprudence and Procedure'],
+                ['id' => 22, 'name' => 'Law Enforcement Administration'],
+                ['id' => 23, 'name' => 'Crime Detection, Investigation & Prevention'],
+                ['id' => 24, 'name' => 'Criminalistics'],
+                ['id' => 25, 'name' => 'Correctional Administration'],
+                ['id' => 26, 'name' => 'Criminal Sociology, Ethics and Human Relations'],
+
+                // Add more specialized subjects if needed
+            ];
         }
 
         return Inertia::render('Subjects', [
