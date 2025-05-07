@@ -1,30 +1,25 @@
-import React, { lazy, Suspense } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
+import { Head, Link } from '@inertiajs/react';
 import Layout from '../layouts/Layout';
-import { Link, Head } from '@inertiajs/react';
 
 // Lazy load Breadcrumbs
 const Breadcrumbs = lazy(() => import('../components/breadcrumbs'));
 
-type Exam = {
-  id: number;
-  name: string;
-};
+type Exam = { id: number; name: string; };
 
-type SeoProps = {
-  title: string;
-  description: string;
-  canonical: string;
-  heading: string;
-};
+type SeoProps = { title: string; description: string; canonical: string; heading: string; };
 
-type ExamsProps = {
-  exams: Exam[];
-  seo: SeoProps;
-};
+type ExamsProps = { exams: Exam[]; seo: SeoProps; };
 
-const Exams: React.FC<ExamsProps> = ({ exams, seo }) => {
-  // hard-coded “coming soon” list
-  const comingSoonExams = [
+export default function Exams({ exams, seo }: ExamsProps) {
+  const [search, setSearch] = useState('');
+
+  // filter exams by search term
+  const filtered = exams.filter(e =>
+    e.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const comingSoon = [
     'NAPOLCOM Exam',
     'Librarian Licensure Exam',
     'PNPA Cadet Admission Test',
@@ -32,67 +27,85 @@ const Exams: React.FC<ExamsProps> = ({ exams, seo }) => {
     'Customs Broker Licensure Exam',
   ];
 
-  const breadcrumbItems = [
+  const breadcrumbs = [
     { label: 'Home', href: '/' },
-    { label: seo.heading }, // current page
+    { label: seo.heading }
   ];
 
   return (
     <Layout>
-      {/* SEO tags */}
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="canonical" href={seo.canonical} />
-
-        {/* Open Graph */}
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
         <meta property="og:url" content={seo.canonical} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <div className="p-6 max-w-5xl mx-auto">
-        {/* Breadcrumbs */}
-        <Suspense fallback={<div className="text-sm text-gray-400 mb-4">Loading breadcrumbs…</div>}>
-          <Breadcrumbs items={breadcrumbItems} />
+      {/* Breadcrumbs + Search */}
+      <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Breadcrumbs items={breadcrumbs} />
         </Suspense>
+        <input
+          type="text"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          placeholder="Search exams..."
+          className="w-full sm:w-1/3 px-4 py-2 border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
 
-        {/* Page Title */}
-        <h1 className="text-3xl font-bold mb-8 text-center text-green-700">
-          {seo.heading}
-        </h1>
+      {/* Hero */}
+      <section className="relative bg-green-600 text-white py-16">
+        <div className="absolute inset-0 bg-gradient-to-br from-green-700 to-green-500 opacity-50"></div>
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-5xl font-extrabold mb-4">{seo.heading}</h1>
+          <p className="text-lg">{seo.description}</p>
+        </div>
+      </section>
 
-        {/* Live Exams Grid */}
-        <div className="grid gap-6 md:grid-cols-2 mb-12">
-          {exams.map((exam) => (
+      {/* Live Exams Grid */}
+      <section className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">Available Exams</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map(exam => (
             <Link
               key={exam.id}
               href={`/exams/${exam.id}/subjects`}
-              className="p-6 bg-white border rounded-2xl shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
+              className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-200 transform hover:-translate-y-1"
             >
-              <h2 className="text-xl font-semibold text-gray-800">{exam.name}</h2>
-              <p className="mt-2 text-gray-500">Start reviewing now!</p>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2 group-hover:text-green-600 transition">
+                  {exam.name}
+                </h3>
+                <p className="text-gray-500">Click to begin review</p>
+              </div>
+              <div className="h-1 bg-gradient-to-r from-green-500 to-green-300 group-hover:from-green-600 group-hover:to-green-400 transition-all"></div>
             </Link>
           ))}
         </div>
+      </section>
 
-        {/* Coming Soon Section */}
-        <h2 className="text-2xl font-bold mb-4 text-center text-gray-600">🚧 Coming Soon</h2>
-        <div className="grid gap-6 md:grid-cols-2 mb-12">
-          {comingSoonExams.map((name, idx) => (
+      {/* Coming Soon */}
+      <section className="max-w-6xl mx-auto px-4 pb-12">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">🚧 Coming Soon</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {comingSoon.map((name, idx) => (
             <div
               key={idx}
-              className="p-6 bg-gray-50 border rounded-2xl text-center shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
+              className="bg-gray-100 p-6 rounded-2xl text-center shadow-inner"
             >
-              <h3 className="text-lg font-semibold text-gray-700">{name}</h3>
-              <p className="mt-2 text-yellow-600 font-medium">Coming Soon!</p>
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">{name}</h3>
+              <span className="inline-block px-3 py-1 bg-yellow-200 text-yellow-800 rounded-full text-sm font-medium">
+                Coming Soon
+              </span>
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </Layout>
   );
-};
-
-export default Exams;
+}

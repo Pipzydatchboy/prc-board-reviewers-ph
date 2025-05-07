@@ -13,24 +13,42 @@ type PartsGridProps = {
 };
 
 const PartsGrid: React.FC<PartsGridProps> = ({ parts, examId, subjectId }) => {
-  // Default unlocked part is 1
   const [unlockedParts, setUnlockedParts] = useState<number[]>([1]);
 
-  // Load unlocked parts from localStorage
   useEffect(() => {
     const key = `prc_unlocked_${examId}_${subjectId}`;
     const stored = localStorage.getItem(key);
+    let initialUnlocked: number[] = [1];
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed)) {
-          setUnlockedParts(parsed.map((n: any) => Number(n)));
+          initialUnlocked = parsed.map((n: any) => Number(n));
         }
       } catch {
         // ignore malformed data
       }
     }
-  }, [examId, subjectId]);
+
+    // Auto-unlock parts with full progress
+    const autoUnlocked = parts.reduce<number[]>((acc, part) => {
+      const progressKey = `prc_progress_${examId}_${subjectId}_${part.id}`;
+      const raw = localStorage.getItem(progressKey);
+      if (raw) {
+        try {
+          const { answered, total } = JSON.parse(raw);
+          if (total > 0 && answered >= total) {
+            acc.push(part.id);
+          }
+        } catch {
+          // ignore parse errors
+        }
+      }
+      return acc;
+    }, []);
+
+    setUnlockedParts(Array.from(new Set([...initialUnlocked, ...autoUnlocked])));
+  }, [examId, subjectId, parts]);
 
   return (
     <div className="grid gap-6 md:grid-cols-2">
@@ -39,15 +57,22 @@ const PartsGrid: React.FC<PartsGridProps> = ({ parts, examId, subjectId }) => {
 
         // Load progress for this part
         const progressKey = `prc_progress_${examId}_${subjectId}_${part.id}`;
-        const rawProgress = localStorage.getItem(progressKey);
+        const raw = localStorage.getItem(progressKey);
         let percent = 0;
-        if (rawProgress) {
+        let hasProgress = false;
+
+        if (raw) {
           try {
-            const { answered, total } = JSON.parse(rawProgress);
+            const { answered, total } = JSON.parse(raw);
             percent = total > 0 ? Math.round((answered / total) * 100) : 0;
+            hasProgress = true;
           } catch {
-            // ignore malformed
+            // ignore malformed progress data
           }
+        } else if (isUnlocked) {
+          // if auto-unlocked but no progress record, show full
+          percent = 100;
+          hasProgress = true;
         }
 
         return (
@@ -68,18 +93,19 @@ const PartsGrid: React.FC<PartsGridProps> = ({ parts, examId, subjectId }) => {
             }}
           >
             <div>
-              <h2 className="text-xl font-semibold text-gray-800">Part {part.id}</h2>
-              {isUnlocked && (
+              <h2 className="text-xl font-semibold text-gray-800">{part.name}</h2>
+              {hasProgress && (
                 <p className="mt-1 text-sm text-green-600">
                   {percent}% completed
                 </p>
               )}
             </div>
-            {!isUnlocked ? (
+
+            {!isUnlocked && (
               <p className="mt-2 text-red-500 text-sm">
-                Unlock by passing Part {part.id - 1}
+                Unlock by finishing Part {part.id - 1}
               </p>
-            ) : null}
+            )}
           </Link>
         );
       })}

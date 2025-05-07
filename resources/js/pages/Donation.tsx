@@ -1,7 +1,6 @@
-// resources/js/pages/Donation.tsx
-import React from 'react';
-import Layout from '../layouts/Layout';
+import React, { useState } from 'react';
 import { Head } from '@inertiajs/react';
+import Layout from '../layouts/Layout';
 
 type SeoProps = {
   title: string;
@@ -14,53 +13,70 @@ type DonationProps = {
   seo: SeoProps;
 };
 
-const Donation: React.FC<DonationProps> = ({ seo }) => {
+export default function Donation({ seo }: DonationProps) {
+  const [showThanks, setShowThanks] = useState(false);
+
+  const handlePrint = () => {
+    setShowThanks(false);
+    setTimeout(() => window.print(), 100);
+  };
+
   return (
     <Layout>
-      {/* SEO tags */}
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="canonical" href={seo.canonical} />
-
-        {/* Open Graph */}
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
         <meta property="og:url" content={seo.canonical} />
         <meta property="og:image" content="https://prcboardreviewersph.com/images/og-donation.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seo.title} />
-        <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:image" content="https://prcboardreviewersph.com/images/og-donation.jpg" />
       </Head>
 
-      <div className="bg-gray-50 py-8">
-        <div className="max-w-2xl mx-auto bg-white shadow-xl rounded-2xl p-8 space-y-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-green-700">
+      <div className="bg-green-50 py-12">
+        <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+          <h1 className="text-4xl font-extrabold text-center text-green-700 mb-4">
             {seo.heading}
           </h1>
-
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Imagine a fresh graduate in a small province, burning the midnight oil on our free quizzes so they can finally pass their licensure exam. Every question they practice, every explanation they read, brings them one step closer to their dream job. Your donation is more than support—it’s hope, opportunity, and a lifeline for hardworking individuals striving for a better future.
+          <p className="text-lg text-gray-800 mb-6">
+            Your donation supports future professionals as they prepare for their licensure exams. It ensures our platform remains free, fresh, and full of up-to-date practice questions and detailed explanations.
+          </p>
+          <p className="text-lg text-gray-800 mb-6">
+            We are a small team of dedicated volunteers pouring our time and passion into building this resource. Your gift is more than financial support—it’s a message of belief in their dreams, helping shape the next generation of professionals.
           </p>
 
-          <p className="text-lg text-gray-700 leading-relaxed">
-            We’re a volunteer-driven community pouring our hearts into creating accurate practice tests, detailed explanations, and new features that empower thousands of learners daily. But keeping our servers online, securing our site, and dedicating time to build new reviewers costs money—and your generosity makes it possible.
-          </p>
-
-          {/* Donation instructions */}
-          <div className="text-center space-y-4">
+          <div className="text-center mb-6">
             <img
               src="/images/gcash-qr.webp"
               alt="GCash QR Code"
-              className="mx-auto w-40 h-auto"
+              className="mx-auto w-48 h-auto mb-4"
             />
-            <p className="text-gray-500">Scan the QR code to donate via GCash and change a life today.</p>
+            <p className="text-gray-600">Scan with GCash to make a real impact today.</p>
           </div>
+
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setShowThanks(true)}
+              className="px-6 py-3 bg-yellow-500 text-white rounded-lg font-semibold hover:bg-yellow-600 transition"
+            >
+              I’ve Donated!
+            </button>
+            <button
+              onClick={handlePrint}
+              className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition"
+            >
+              Print QR Code
+            </button>
+          </div>
+
+          {showThanks && (
+            <div className="mt-6 p-4 bg-green-100 rounded-lg text-green-800 text-center">
+              Thank you! Your generosity fuels futures and makes this journey possible. 🙏
+            </div>
+          )}
         </div>
       </div>
     </Layout>
   );
-};
-
-export default Donation;
+}
