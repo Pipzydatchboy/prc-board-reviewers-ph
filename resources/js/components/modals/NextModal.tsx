@@ -7,7 +7,7 @@ type NextModalProps = {
 
 const NextModal: React.FC<NextModalProps> = ({ part, onContinue }) => (
   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div className="bg-white rounded-lg p-6 max-w-sm w-full text-center">
+    <div className="bg-white rounded-lg p-6 max-w-sm w-full text-center text-gray-900">
       <h2 className="text-xl font-semibold mb-4">Great Job!</h2>
       <p className="mb-4">You passed Part {part}! Are you ready for the next part?</p>
       <button

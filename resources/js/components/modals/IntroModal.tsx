@@ -8,16 +8,16 @@ type IntroModalProps = {
 
 const IntroModal: React.FC<IntroModalProps> = ({ subjectName, part, onStart }) => (
   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div className="bg-white rounded-lg p-6 max-w-md w-full text-center">
+    <div className="bg-white rounded-lg p-6 max-w-md w-full text-center text-gray-900">
       <h2 className="text-2xl font-bold mb-4">
         Welcome to {subjectName} Part {part}
       </h2>
       <p className="mb-4">
-        You are about to start <strong>Part {part}</strong> of <strong>{subjectName}</strong>.
+        You are about to start <strong>Part {part}</strong> of <strong>{subjectName}</strong>.  
         Aim to score at least <strong>80%</strong> to unlock the next part!
       </p>
       <p className="italic mb-6">
-        Stay focused and do your best. You've got this! 💪
+        Stay focused and do your best. You’ve got this! 💪
       </p>
       <button
         onClick={onStart}
