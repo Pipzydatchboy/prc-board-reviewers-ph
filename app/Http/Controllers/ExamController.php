@@ -13,7 +13,7 @@ class ExamController extends Controller
             ['id' => 1, 'name' => 'Civil Service Exam (CSE)'],
             ['id' => 2, 'name' => 'Licensure Examination for Teachers (LET)'],
             ['id' => 3, 'name' => 'Criminology Licensure Examination (CLE)'],
-            ['id' => 4, 'name' => 'Midwifery Licensure Examination (CLE)'],
+            ['id' => 4, 'name' => 'Midwifery Licensure Examination (MLE)'],
         ];
 
         return Inertia::render('Exams', [
