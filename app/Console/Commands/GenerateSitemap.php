@@ -56,6 +56,12 @@ class GenerateSitemap extends Command
                      ->setPriority(0.7)
                      ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
            )
+           // MLE (Midwifery Licensure Examination) subjects
+           ->add(
+            Url::create('/exams/3/subjects')
+                 ->setPriority(0.7)
+                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+       )           
             ->add(
                 Url::create('/about')
                     ->setPriority(0.5)

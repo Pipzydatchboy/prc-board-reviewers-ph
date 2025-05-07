@@ -44,6 +44,12 @@ class PartController extends Controller
             24=>  'Criminalistics',
             25=>  'Correctional Administration',
             26=>  'Criminal Sociology, Ethics and Human Relations',
+             //MLE Subjects
+            27=>  'Obstetrics & Gynecology',
+            28=>  'Fundamentals of Health Care',
+            29=>  'Infant Care & Feeding',
+            30=>  'Primary Health Care',
+            31=>  'Professional Growth & Development',
         ];
 
         // Use our map or fallback to whatever is in the DB

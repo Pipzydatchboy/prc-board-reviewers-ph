@@ -249,7 +249,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart7Seeder::class,
 		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart8Seeder::class,
 		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart9Seeder::class,
-		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart10Seeder::class, */
+		\Database\Seeders\LET\Majorship\BiologicalScience\BiologicalSciencePart10Seeder::class, 
         
 //CLE - Criminal Jurisprudence and Procedure - ID 21
          \Database\Seeders\CLE\CriminalJurisprudenceAndProcedure\CriminalJurisprudenceAndProcedurePart1Seeder::class, 
@@ -321,11 +321,67 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart7Seeder::class, 
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart8Seeder::class, 
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart9Seeder::class, 
-		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart10Seeder::class, 
+		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart10Seeder::class, */
+
+//MLE - ObstetricsAndGynecology - ID 27
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart1Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart2Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart3Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart4Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart5Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart6Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart7Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart8Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart9Seeder::class,
+		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart10Seeder::class,
+
+//MLE - FundamentalsOfHealthCare - ID 28
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart1Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart2Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart3Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart4Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart5Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart6Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart7Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart8Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart9Seeder::class,
+		\Database\Seeders\MLE\FundamentalsOfHealthCare\FundamentalsOfHealthCarePart10Seeder::class, 
 		
+//MLE - InfantCareAndFeeding - ID 29
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart1Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart2Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart3Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart4Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart5Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart6Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart7Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart8Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart9Seeder::class,
+		\Database\Seeders\MLE\InfantCareAndFeeding\InfantCareAndFeedingPart10Seeder::class,
 
+//MLE - PrimaryHealthCare - ID 30
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart1Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart2Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart3Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart4Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart5Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart6Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart7Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart8Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart9Seeder::class,
+		\Database\Seeders\MLE\PrimaryHealthCare\PrimaryHealthCarePart10Seeder::class,
 
-
+//MLE - ProfessionalGrowthAndDevelopment - ID 31
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart1Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart2Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart4Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart3Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart5Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart6Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart7Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart8Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart9Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart10Seeder::class,
 		
 
 

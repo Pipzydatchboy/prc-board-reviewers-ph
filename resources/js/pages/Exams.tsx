@@ -19,7 +19,6 @@ const Exams: React.FC<ExamsProps> = ({ exams }) => {
   const comingSoonExams = [
     'NAPOLCOM Exam',
     'Librarian Licensure Exam',
-    'Midwifery Licensure Exam',
     'PNPA Cadet Admission Test',
     'Fire Officer Exam',
     'Customs Broker Licensure Exam',

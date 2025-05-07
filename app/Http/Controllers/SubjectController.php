@@ -54,6 +54,19 @@ class SubjectController extends Controller
 
                 // Add more specialized subjects if needed
             ];
+
+        } elseif ($examId == 4) { // MLE
+            $examName = 'Midwifery Licensure Examination (CLE)';
+            $subjects = [
+                ['id' => 27, 'name' => 'Obstetrics & Gynecology'],
+                ['id' => 28, 'name' => 'Fundamentals of Health Care'],
+                ['id' => 29, 'name' => 'Infant Care & Feeding'],
+                ['id' => 30, 'name' => 'Primary Health Care'],
+                ['id' => 31, 'name' => 'Professional Growth & Development'],
+
+
+                // Add more specialized subjects if needed
+            ];
         }
 
         return Inertia::render('Subjects', [

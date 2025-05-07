@@ -29,13 +29,18 @@ class SubjectsTableSeeder extends Seeder
           ['id' => 17, 'name' => 'Specialized Subject: Technical - Vocational Teacher Education', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 18, 'name' => 'Specialized Subject: Physical Education', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 19, 'name' => 'Specialized Subject: Culture and Arts Education', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 20, 'name' => 'Specialized Subject: Biological Science', 'created_at' => now(), 'updated_at' => now()], */
+          ['id' => 20, 'name' => 'Specialized Subject: Biological Science', 'created_at' => now(), 'updated_at' => now()], 
           ['id' => 21, 'name' => 'Criminal Jurisprudence and Procedure', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 22, 'name' => 'Law Enforcement Administration', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 23, 'name' => 'Crime Detection, Investigation & Prevention', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 24, 'name' => 'Criminalistics', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 25, 'name' => 'Correctional Administration', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 26, 'name' => 'Criminal Sociology, Ethics and Human Relations', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 26, 'name' => 'Criminal Sociology, Ethics and Human Relations', 'created_at' => now(), 'updated_at' => now()],*/
+          ['id' => 27, 'name' => 'Obstetrics & Gynecology', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 28, 'name' => 'Fundamentals of Health Care', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 29, 'name' => 'Infant Care & Feeding', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 30, 'name' => 'Primary Health Care', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 31, 'name' => 'Professional Growth & Development', 'created_at' => now(), 'updated_at' => now()],
           // …add more as needed…
         ]);
     }

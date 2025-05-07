@@ -4,7 +4,6 @@ const ComingSoonExams: React.FC = () => {
     const exams = [
         { name: 'NAPOLCOM Exam' },
         { name: 'Librarian Licensure Exam' },
-        { name: 'Midwifery Licensure Exam' },
         { name: 'PNPA Cadet Admission Test' },
         { name: 'Fire Officer Exam' },
         { name: 'Customs Broker Licensure Exam' },

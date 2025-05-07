@@ -97,7 +97,7 @@ const HomePage: React.FC = () => {
                 { title: 'Criminology Board Exam', desc: 'Prepare for Criminology licensure.', link: '/exams/3/subjects' },
                 { title: 'NAPOLCOM Exam', desc: 'Entrance and Promotional levels.', comingSoon: true },
                 { title: 'Librarian Licensure Exam', desc: 'Ace the Librarian board exam.', comingSoon: true },
-                { title: 'Midwifery Licensure Exam', desc: 'Review for Midwifery board exam.', comingSoon: true },
+                { title: 'Midwifery Licensure Exam', desc: 'Review for Midwifery board exam.', link: '/exams/4/subjects' },
               ].map((exam, idx) => (
                 <div key={idx} className="p-6 border rounded-lg bg-white hover:shadow-sm">
                   <h3 className="text-xl font-bold mb-2">{exam.title}</h3>
