@@ -37,9 +37,19 @@ const HomePage: React.FC = () => {
     "reviewCount": "256"
   };
 
+  const examList = [
+    { title: 'Civil Service Exam (CSE)', desc: 'Professional and Sub-Professional levels.', link: '/exams/1/subjects' },
+    { title: 'Licensure Exam for Teachers (LET)', desc: 'GenEd, ProfEd, and Major Subjects.', link: '/exams/2/subjects' },
+    { title: 'Criminology Board Exam', desc: 'Prepare for Criminology licensure.', link: '/exams/3/subjects' },
+    { title: 'NAPOLCOM Exam', desc: 'Entrance and Promotional levels.', comingSoon: true },
+    { title: 'Librarian Licensure Exam', desc: 'Ace the Librarian board exam.', comingSoon: true },
+    { title: 'Midwifery Licensure Exam', desc: 'Review for Midwifery board exam.', link: '/exams/4/subjects' },
+  ];
+
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Free Civil Service, LET, Criminology, NAPOLCOM, Librarian & More Reviewers | PRC Board Reviewers PH</title>
         <meta name="description" content="Get free online reviewers for Civil Service Exam, LET, Criminology, NAPOLCOM, Librarian, Midwifery, and other board exams. Practice tests with explanations at PRC Board Reviewers PH!" />
         {/* ... other meta tags ... */}
@@ -85,23 +95,16 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* Featured Exams */}
-        <section className="bg-gray-100 py-12">
+        <section className="bg-gray-100 py-12 text-gray-900">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8 text-green-700">
               Available Exam Reviewers
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { title: 'Civil Service Exam (CSE)', desc: 'Professional and Sub-Professional levels.', link: '/exams/1/subjects' },
-                { title: 'Licensure Exam for Teachers (LET)', desc: 'GenEd, ProfEd, and Major Subjects.', link: '/exams/2/subjects' },
-                { title: 'Criminology Board Exam', desc: 'Prepare for Criminology licensure.', link: '/exams/3/subjects' },
-                { title: 'NAPOLCOM Exam', desc: 'Entrance and Promotional levels.', comingSoon: true },
-                { title: 'Librarian Licensure Exam', desc: 'Ace the Librarian board exam.', comingSoon: true },
-                { title: 'Midwifery Licensure Exam', desc: 'Review for Midwifery board exam.', link: '/exams/4/subjects' },
-              ].map((exam, idx) => (
+              {examList.map((exam, idx) => (
                 <div key={idx} className="p-6 border rounded-lg bg-white hover:shadow-sm">
                   <h3 className="text-xl font-bold mb-2">{exam.title}</h3>
-                  <p className="text-gray-800 mb-4">{exam.desc}</p>
+                  <p className="mb-4">{exam.desc}</p>
                   {exam.comingSoon ? (
                     <span className="text-green-600">Coming Soon</span>
                   ) : (
