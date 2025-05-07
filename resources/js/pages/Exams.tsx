@@ -62,8 +62,8 @@ export default function Exams({ exams, seo }: ExamsProps) {
       <section className="relative bg-green-600 text-white py-16">
         <div className="absolute inset-0 bg-gradient-to-br from-green-700 to-green-500 opacity-50"></div>
         <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-extrabold mb-4">{seo.heading}</h1>
-          <p className="text-lg">{seo.description}</p>
+          <h1 className="text-5xl font-extrabold mb-4 text-gray-100">{seo.heading}</h1>
+          <p className="text-lg text-gray-200">{seo.description}</p>
         </div>
       </section>
 
@@ -78,12 +78,12 @@ export default function Exams({ exams, seo }: ExamsProps) {
               className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-200 transform hover:-translate-y-1"
             >
               <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-2 group-hover:text-green-600 transition">
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800">
                   {exam.name}
                 </h3>
-                <p className="text-gray-500">Click to begin review</p>
+                <p className="text-gray-600">Click to begin review</p>
               </div>
-              <div className="h-1 bg-gradient-to-r from-green-500 to-green-300 group-hover:from-green-600 group-hover:to-green-400 transition-all"></div>
+              <div className="h-1 bg-gradient-to-r from-green-500 to-green-300 transition-all"></div>
             </Link>
           ))}
         </div>
@@ -98,7 +98,7 @@ export default function Exams({ exams, seo }: ExamsProps) {
               key={idx}
               className="bg-gray-100 p-6 rounded-2xl text-center shadow-inner"
             >
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">{name}</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">{name}</h3>
               <span className="inline-block px-3 py-1 bg-yellow-200 text-yellow-800 rounded-full text-sm font-medium">
                 Coming Soon
               </span>
