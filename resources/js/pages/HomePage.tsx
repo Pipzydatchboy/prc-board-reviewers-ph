@@ -1,13 +1,24 @@
 // resources/js/pages/HomePage.tsx
 import React, { lazy, Suspense } from 'react';
-import { Head, Link } from '@inertiajs/react';
 import Layout from '../layouts/Layout';
+import { Head, Link } from '@inertiajs/react';
 
 // Lazy-loaded content
 const Testimonials = lazy(() => import('@/components/Testimonials'));
 const FAQs = lazy(() => import('@/components/FAQs'));
 
-const HomePage: React.FC = () => {
+type SeoProps = {
+  title: string;
+  description: string;
+  canonical: string;
+  heading: string;
+};
+
+type HomePageProps = {
+  seo: SeoProps;
+};
+
+const HomePage: React.FC<HomePageProps> = ({ seo }) => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -39,20 +50,24 @@ const HomePage: React.FC = () => {
 
   const examList = [
     { title: 'Civil Service Exam (CSE)', desc: 'Professional and Sub-Professional levels.', link: '/exams/1/subjects' },
-    { title: 'Licensure Exam for Teachers (LET)', desc: 'GenEd, ProfEd, and Major Subjects.', link: '/exams/2/subjects' },
-    { title: 'Criminology Board Exam', desc: 'Prepare for Criminology licensure.', link: '/exams/3/subjects' },
+    { title: 'Licensure Exam for Teachers (LET)', desc: 'GenEd, ProfEd, and Major Subjects.', link: '/let-reviewers' },
+    { title: 'Criminology Board Exam', desc: 'Prepare for Criminology licensure.', link: '/cle-reviewers' },
     { title: 'NAPOLCOM Exam', desc: 'Entrance and Promotional levels.', comingSoon: true },
     { title: 'Librarian Licensure Exam', desc: 'Ace the Librarian board exam.', comingSoon: true },
-    { title: 'Midwifery Licensure Exam', desc: 'Review for Midwifery board exam.', link: '/exams/4/subjects' },
+    { title: 'Midwifery Licensure Exam', desc: 'Review for Midwifery board exam.', link: '/mle-reviewers' },
   ];
 
   return (
     <>
+      {/* SEO tags */}
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Free Civil Service, LET, Criminology, NAPOLCOM, Librarian & More Reviewers | PRC Board Reviewers PH</title>
-        <meta name="description" content="Get free online reviewers for Civil Service Exam, LET, Criminology, NAPOLCOM, Librarian, Midwifery, and other board exams. Practice tests with explanations at PRC Board Reviewers PH!" />
-        {/* ... other meta tags ... */}
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={seo.canonical} />
+        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
         <script type="application/ld+json">{JSON.stringify(reviewRating)}</script>
@@ -61,7 +76,7 @@ const HomePage: React.FC = () => {
       <Layout>
         {/* Hero + Top Banner */}
         <section className="bg-green-700 text-white py-16 text-center">
-          <h1 className="text-4xl font-bold mb-4">Your Ultimate Reviewer Hub</h1>
+          <h1 className="text-4xl font-bold mb-4">{seo.heading}</h1>
           <p className="text-lg mb-6">
             Free Online Reviewers for Civil Service, LET, Criminology, NAPOLCOM, Librarian, Midwifery, and More!
           </p>

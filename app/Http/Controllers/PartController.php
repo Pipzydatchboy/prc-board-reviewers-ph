@@ -21,38 +21,38 @@ class PartController extends Controller
             3  => 'General Information',
             4  => 'Verbal Ability',
             5  => 'Clerical Ability',
-            // ... LET subjects as before ...
+            // LET Subjects
             6  => 'Professional Education',
             7  => 'General Education',
-            8  => 'pecialized Subject: Early Childhood Education',
+            8  => 'Specialized Subject: Early Childhood Education',
             9  => 'Specialized Subject: Special Needs Education',
-            10  => 'pecialized Subject: English',
-            11  => 'Specialized Subject: Filipino',
-            12  => 'Specialized Subject: Mathematics',
-            13  => 'Specialized Subject: Physical Science',
-            20  => 'Specialized Subject: Biological Science',
-            14  => 'Specialized Subject: Social Studies',
-            15  => 'Specialized Subject: Values Education',
-            16  => 'Specialized Subject: Technology and Livelihood Education',
-            17  => 'Specialized Subject: Technical - Vocational Teacher Education',
-            18  => 'Specialized Subject: Physical Education',
-            19  => 'Specialized Subject: Culture and Arts Education',
-            //CLE Subjects
-            21=>  'Criminal Jurisprudence and Procedure',
-            22=>  'Law Enforcement Administration',
-            23=>  'Crime Detection, Investigation & Prevention',
-            24=>  'Criminalistics',
-            25=>  'Correctional Administration',
-            26=>  'Criminal Sociology, Ethics and Human Relations',
-             //MLE Subjects
-            27=>  'Obstetrics & Gynecology',
-            28=>  'Fundamentals of Health Care',
-            29=>  'Infant Care & Feeding',
-            30=>  'Primary Health Care',
-            31=>  'Professional Growth & Development',
+            10 => 'Specialized Subject: English',
+            11 => 'Specialized Subject: Filipino',
+            12 => 'Specialized Subject: Mathematics',
+            13 => 'Specialized Subject: Physical Science',
+            14 => 'Specialized Subject: Social Studies',
+            15 => 'Specialized Subject: Values Education',
+            16 => 'Specialized Subject: Technology and Livelihood Education',
+            17 => 'Specialized Subject: Technical - Vocational Teacher Education',
+            18 => 'Specialized Subject: Physical Education',
+            19 => 'Specialized Subject: Culture and Arts Education',
+            20 => 'Specialized Subject: Biological Science',
+            // CLE Subjects
+            21 => 'Criminal Jurisprudence and Procedure',
+            22 => 'Law Enforcement Administration',
+            23 => 'Crime Detection, Investigation & Prevention',
+            24 => 'Criminalistics',
+            25 => 'Correctional Administration',
+            26 => 'Criminal Sociology, Ethics and Human Relations',
+            // MLE Subjects
+            27 => 'Obstetrics & Gynecology',
+            28 => 'Fundamentals of Health Care',
+            29 => 'Infant Care & Feeding',
+            30 => 'Primary Health Care',
+            31 => 'Professional Growth & Development',
         ];
 
-        // Use our map or fallback to whatever is in the DB
+        // Determine the display name
         $subjectName = $subjectNames[$subjectId] ?? $subject->name;
 
         // Generate parts 1–10
@@ -64,12 +64,21 @@ class PartController extends Controller
             ];
         }
 
+        // SEO metadata for Parts page
+        $seo = [
+            'title'       => "{$subjectName} Parts | PRC Board Reviewers PH",
+            'description' => "Explore all parts of {$subjectName} for the {$exam->type}.",
+            'canonical'   => url()->current(),
+            'heading'     => "{$subjectName} Parts",
+        ];
+
         return Inertia::render('Parts', [
             'parts'       => $parts,
             'subjectName'=> $subjectName,
             'examId'     => $exam->id,
             'subjectId'  => $subject->id,
-            'examName'   => $exam->type,    // ← add this
+            'examName'   => $exam->type,
+            'seo'        => $seo,
         ]);
     }
 }

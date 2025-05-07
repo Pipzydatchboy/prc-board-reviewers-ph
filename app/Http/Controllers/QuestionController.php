@@ -23,20 +23,28 @@ class QuestionController extends Controller
         // Fetch exam and subject
         $exam    = Exam::findOrFail((int) $examId);
         $subject = Subject::findOrFail((int) $subjectId);
-    
+
         // Retrieve questions for this subject and part
         $questions = Question::where('subject_id', $subject->id)
                              ->where('part', (int) $partId)
                              ->get();
-    
+
+        // Build SEO metadata
+        $seo = [
+            'title'       => "{$subject->name} Part {$partId} Questions | PRC Board Reviewers PH",
+            'description' => "Part {$partId} of {$subject->name} quiz for the {$exam->type}.",
+            'canonical'   => url()->current(),
+            'heading'     => "{$subject->name} – Part {$partId}",
+        ];
+
         return Inertia::render('Questions', [
             'questions'   => $questions,
             'subjectId'   => $subject->id,
             'subjectName' => $subject->name,
-            // Cast partId to integer so React receives a number
             'part'        => (int) $partId,
             'examType'    => $exam->type,
             'examId'      => $exam->id,
+            'seo'         => $seo,
         ]);
     }
 }

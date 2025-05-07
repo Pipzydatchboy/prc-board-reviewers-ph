@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+use Carbon\Carbon;
 
 class SubjectController extends Controller
 {
@@ -11,7 +12,9 @@ class SubjectController extends Controller
         $subjects = [];
         $examName = '';
 
-        if ($examId == 1) { // CSE
+        // Define subjects and exam name based on examId
+        if ($examId == 1) {
+            // CSE
             $examName = 'Civil Service Exam (CSE)';
             $subjects = [
                 ['id' => 1, 'name' => 'Numerical Ability'],
@@ -20,13 +23,14 @@ class SubjectController extends Controller
                 ['id' => 4, 'name' => 'Verbal Ability'],
                 ['id' => 5, 'name' => 'Clerical Ability'],
             ];
-        } elseif ($examId == 2) { // LET
+        } elseif ($examId == 2) {
+            // LET
             $examName = 'Licensure Exam for Teachers (LET)';
             $subjects = [
-                ['id' => 6, 'name' => 'Professional Education'],
-                ['id' => 7, 'name' => 'General Education'],
-                ['id' => 8, 'name' => 'Specialized Subject: Early Childhood Education'],
-                ['id' => 9, 'name' => 'Specialized Subject: Special Needs Education'],
+                ['id' => 6,  'name' => 'Professional Education'],
+                ['id' => 7,  'name' => 'General Education'],
+                ['id' => 8,  'name' => 'Specialized Subject: Early Childhood Education'],
+                ['id' => 9,  'name' => 'Specialized Subject: Special Needs Education'],
                 ['id' => 10, 'name' => 'Specialized Subject: English'],
                 ['id' => 11, 'name' => 'Specialized Subject: Filipino'],
                 ['id' => 12, 'name' => 'Specialized Subject: Mathematics'],
@@ -38,12 +42,10 @@ class SubjectController extends Controller
                 ['id' => 17, 'name' => 'Specialized Subject: Technical - Vocational Teacher Education'],
                 ['id' => 18, 'name' => 'Specialized Subject: Physical Education'],
                 ['id' => 19, 'name' => 'Specialized Subject: Culture and Arts Education'],
-
-                // Add more specialized subjects if needed
             ];
-
-        } elseif ($examId == 3) { // CLE
-            $examName = 'Criminilogy Licensure Examination (CLE)';
+        } elseif ($examId == 3) {
+            // CLE
+            $examName = 'Criminology Licensure Examination (CLE)';
             $subjects = [
                 ['id' => 21, 'name' => 'Criminal Jurisprudence and Procedure'],
                 ['id' => 22, 'name' => 'Law Enforcement Administration'],
@@ -51,28 +53,73 @@ class SubjectController extends Controller
                 ['id' => 24, 'name' => 'Criminalistics'],
                 ['id' => 25, 'name' => 'Correctional Administration'],
                 ['id' => 26, 'name' => 'Criminal Sociology, Ethics and Human Relations'],
-
-                // Add more specialized subjects if needed
             ];
-
-        } elseif ($examId == 4) { // MLE
-            $examName = 'Midwifery Licensure Examination (CLE)';
+        } elseif ($examId == 4) {
+            // MLE
+            $examName = 'Midwifery Licensure Examination (MLE)';
             $subjects = [
                 ['id' => 27, 'name' => 'Obstetrics & Gynecology'],
                 ['id' => 28, 'name' => 'Fundamentals of Health Care'],
                 ['id' => 29, 'name' => 'Infant Care & Feeding'],
                 ['id' => 30, 'name' => 'Primary Health Care'],
                 ['id' => 31, 'name' => 'Professional Growth & Development'],
-
-
-                // Add more specialized subjects if needed
             ];
+        }
+
+        // Build SEO metadata
+        $now = Carbon::now();
+        $seo = [
+            'title'       => "$examName Subjects | PRC Board Reviewers PH",
+            'description' => "Practice questions and quizzes for the $examName.",
+            'canonical'   => url()->current(),
+            'lastmod'     => $now->toDateString(),
+            'heading'     => "$examName Subjects",
+        ];
+
+        switch ($examId) {
+            case 1:
+                $seo = [
+                    'title'       => 'Free CSE Reviewers | PRC Board Reviewers PH',
+                    'description' => 'Get free Civil Service Exam reviewers—practice questions, explanations, and study tips.',
+                    'canonical'   => route('cse.reviewers'),
+                    'lastmod'     => $now->toDateString(),
+                    'heading'     => 'Free CSE Reviewers',
+                ];
+                break;
+            case 2:
+                $seo = [
+                    'title'       => 'Free LET Reviewers | PRC Board Reviewers PH',
+                    'description' => 'Get free LET reviewers—practice quizzes, detailed answers, and exam tips.',
+                    'canonical'   => route('let.reviewers'),
+                    'lastmod'     => $now->toDateString(),
+                    'heading'     => 'Free LET Reviewers',
+                ];
+                break;
+            case 3:
+                $seo = [
+                    'title'       => 'Free CLE Reviewers | PRC Board Reviewers PH',
+                    'description' => 'Your free Criminology Licensure Exam reviewers—quiz bank and explanations.',
+                    'canonical'   => route('cle.reviewers'),
+                    'lastmod'     => $now->toDateString(),
+                    'heading'     => 'Free CLE Reviewers',
+                ];
+                break;
+            case 4:
+                $seo = [
+                    'title'       => 'Free MLE Reviewers | PRC Board Reviewers PH',
+                    'description' => 'Get free Midwifery Licensure Exam reviewers—practice tests and review materials.',
+                    'canonical'   => route('mle.reviewers'),
+                    'lastmod'     => $now->toDateString(),
+                    'heading'     => 'Free MLE Reviewers',
+                ];
+                break;
         }
 
         return Inertia::render('Subjects', [
             'subjects' => $subjects,
-            'examId' => $examId,
-            'examName' => $examName, // Add this for breadcrumbs
+            'examId'   => $examId,
+            'examName' => $examName,
+            'seo'      => $seo,
         ]);
     }
 }

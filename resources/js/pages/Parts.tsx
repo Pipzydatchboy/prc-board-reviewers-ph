@@ -1,4 +1,3 @@
-// resources/js/pages/Parts.tsx
 import React, { useMemo, lazy, Suspense } from 'react';
 import Layout from '../layouts/Layout';
 import { Head } from '@inertiajs/react';
@@ -12,15 +11,23 @@ type Part = {
   name: string;
 };
 
+type SeoProps = {
+  title: string;
+  description: string;
+  canonical: string;
+  heading: string;
+};
+
 type PartsProps = {
   parts: Part[];
   subjectName: string;
   examId: number;
   subjectId: number;
   examName: string;
+  seo: SeoProps;
 };
 
-const Parts: React.FC<PartsProps> = ({ parts, subjectName, examId, subjectId, examName }) => {
+const Parts: React.FC<PartsProps> = ({ parts, subjectName, examId, subjectId, examName, seo }) => {
   const memoizedParts = useMemo(() => parts, [parts]);
 
   const breadcrumbItems = [
@@ -32,12 +39,17 @@ const Parts: React.FC<PartsProps> = ({ parts, subjectName, examId, subjectId, ex
 
   return (
     <Layout>
-      {/* Inertia Head for dynamic title/meta */}
-      <Head title={`${subjectName} Parts | PRC Board Reviewers PH`}>
-        <meta
-          name="description"
-          content={`View and review all parts of the ${subjectName} subject for your PRC board exam under ${examName}.`}
-        />
+      {/* SEO tags */}
+      <Head>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={seo.canonical} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <div className="p-6 max-w-4xl mx-auto">
@@ -48,7 +60,7 @@ const Parts: React.FC<PartsProps> = ({ parts, subjectName, examId, subjectId, ex
 
         {/* Page Title */}
         <h1 className="text-3xl font-bold mb-4 text-center text-green-700">
-          🗂️ {subjectName} – Parts List
+          {seo.heading}
         </h1>
 
         {/* Parts Grid */}

@@ -10,11 +10,19 @@ type Exam = {
   name: string;
 };
 
-type ExamsProps = {
-  exams: Exam[];
+type SeoProps = {
+  title: string;
+  description: string;
+  canonical: string;
+  heading: string;
 };
 
-const Exams: React.FC<ExamsProps> = ({ exams }) => {
+type ExamsProps = {
+  exams: Exam[];
+  seo: SeoProps;
+};
+
+const Exams: React.FC<ExamsProps> = ({ exams, seo }) => {
   // hard-coded “coming soon” list
   const comingSoonExams = [
     'NAPOLCOM Exam',
@@ -26,18 +34,22 @@ const Exams: React.FC<ExamsProps> = ({ exams }) => {
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
-    { label: 'Exams' }, // current page, no link
+    { label: seo.heading }, // current page
   ];
 
   return (
     <Layout>
-      {/* Inertia's Head for dynamic title */}
+      {/* SEO tags */}
       <Head>
-        <title>Available Exams - PRC Board Reviewers PH</title>
-        <meta
-          name="description"
-          content="Browse and review available exams for the Laravel exam preparation. Get ready with practice tests and explanations."
-        />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={seo.canonical} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <div className="p-6 max-w-5xl mx-auto">
@@ -47,7 +59,9 @@ const Exams: React.FC<ExamsProps> = ({ exams }) => {
         </Suspense>
 
         {/* Page Title */}
-        <h1 className="text-3xl font-bold mb-8 text-center text-green-700">📚 Available Exams</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center text-green-700">
+          {seo.heading}
+        </h1>
 
         {/* Live Exams Grid */}
         <div className="grid gap-6 md:grid-cols-2 mb-12">

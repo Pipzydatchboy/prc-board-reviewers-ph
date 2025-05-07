@@ -6,6 +6,9 @@ use Inertia\Inertia;
 
 class ExamController extends Controller
 {
+    /**
+     * Display a listing of available exams.
+     */
     public function index()
     {
         // Static exam list for now
@@ -16,8 +19,17 @@ class ExamController extends Controller
             ['id' => 4, 'name' => 'Midwifery Licensure Examination (MLE)'],
         ];
 
+        // SEO metadata
+        $seo = [
+            'title'       => 'Available Exams | PRC Board Reviewers PH',
+            'description' => 'Browse free online reviewers for Civil Service Exam, LET, Criminology, Midwifery, and more at PRC Board Reviewers PH.',
+            'canonical'   => url('/exams'),
+            'heading'     => 'Available Exams',
+        ];
+
         return Inertia::render('Exams', [
             'exams' => $exams,
+            'seo'   => $seo,
         ]);
     }
 }

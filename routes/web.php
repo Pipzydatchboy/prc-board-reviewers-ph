@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\PartController;
@@ -15,40 +17,65 @@ use App\Http\Controllers\DonationController;
 |--------------------------------------------------------------------------
 */
 
-// Homepage Route (SEO Optimized)
-Route::get('/', function () {
-    return Inertia::render('HomePage', [
-        'title' => 'Free Civil Service & LET Reviewers | PRC Board Reviewers PH',
-    ]);
-})->name('home');
+// Homepage Route (uses HomeController)
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
-// About Us Page (Lazy‑loaded)
-Route::get('/about', function () {
-    return Inertia::render('About', [
-        'title' => 'About Us | PRC Board Reviewers PH',
-    ]);
-})->name('about');
+// About Us Page (uses AboutController)
+Route::get('/about', [AboutController::class, 'index'])
+    ->name('about');
 
-// Donation Page
+// Donation Page (uses DonationController)
 Route::get('/donation', [DonationController::class, 'index'])
-     ->name('donation');
+    ->name('donation');
 
 // Exam Flow Routes
 Route::get('/exams', [ExamController::class, 'index'])
-     ->name('exams.index');
+    ->name('exams.index');
 
+/*
+|──────────────────────────────────────────────────────────────────────────
+| SEO‑Friendly Reviewers Aliases
+|──────────────────────────────────────────────────────────────────────────
+*/
+
+// Civil Service Exam (CSE) Reviewers
+Route::get('/cse-reviewers', [SubjectController::class, 'index'])
+    ->defaults('exam', 1)
+    ->name('cse.reviewers');
+
+// Licensure Exam for Teachers (LET) Reviewers
+Route::get('/let-reviewers', [SubjectController::class, 'index'])
+    ->defaults('exam', 2)
+    ->name('let.reviewers');
+
+// Criminology Licensure Examination (CLE) Reviewers
+Route::get('/cle-reviewers', [SubjectController::class, 'index'])
+    ->defaults('exam', 3)
+    ->name('cle.reviewers');
+
+// Midwifery Licensure Examination (MLE) Reviewers
+Route::get('/mle-reviewers', [SubjectController::class, 'index'])
+    ->defaults('exam', 4)
+    ->name('mle.reviewers');
+
+/*
+|──────────────────────────────────────────────────────────────────────────
+| Generic Subjects listing (fallback for any other exam IDs)
+|──────────────────────────────────────────────────────────────────────────
+*/
 Route::get('/exams/{exam}/subjects', [SubjectController::class, 'index'])
-     ->name('subjects.index');
+    ->name('subjects.index');
 
 Route::get('/exams/{exam}/subjects/{subject}/parts', [PartController::class, 'index'])
-     ->name('parts.index');
+    ->name('parts.index');
 
 Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/questions', [QuestionController::class, 'index'])
-     ->name('questions.index');
+    ->name('questions.index');
 
 // Quiz Page
 Route::get('/exams/{exam}/subjects/{subject}/parts/{part}', [QuizController::class, 'index'])
-     ->name('quiz.index');
+    ->name('quiz.index');
 
 // Result Page Route
 Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($exam, $subject, $part) {
@@ -59,6 +86,7 @@ Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($ex
 Route::get('/sitemap.xml', function () {
     return response()->file(public_path('sitemap.xml'));
 });
+
 Route::get('/robots.txt', function () {
     return response(
         "User-agent: *\nDisallow:\nSitemap: " . url('/sitemap.xml'),

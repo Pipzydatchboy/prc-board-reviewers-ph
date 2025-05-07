@@ -5,75 +5,71 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
+use App\Models\Exam;
 
 class GenerateSitemap extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'app:generate-sitemap';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Generate sitemap.xml for SEO';
 
-    /**
-     * Execute the console command.
-     */
     public function handle()
     {
+        $now = Carbon::now();
+
         $sitemap = Sitemap::create()
+            // Homepage
             ->add(
                 Url::create('/')
-                    ->setPriority(1.0)
+                    ->setLastModificationDate($now)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                    ->setPriority(1.0)
             )
+            // Exams index page
             ->add(
                 Url::create('/exams')
+                    ->setLastModificationDate($now)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                     ->setPriority(0.8)
+            );
+
+        // Dynamically add each exam overview and subjects list
+        foreach (Exam::all() as $exam) {
+            $slug = Str::slug($exam->type) . '-reviewers';
+            // SEO-friendly alias for the exam overview
+            $sitemap->add(
+                Url::create("/{$slug}")
+                    ->setLastModificationDate($exam->updated_at)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-            )
-            // Civil Service Exam subjects
-            ->add(
-                Url::create('/exams/1/subjects')
+                    ->setPriority(0.8)
+            );
+
+            // Subjects listing for each exam
+            $sitemap->add(
+                Url::create("/exams/{$exam->id}/subjects")
+                    ->setLastModificationDate($exam->updated_at)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                     ->setPriority(0.7)
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-            )
-            // LET (Licensure Exam for Teachers) subjects
-            ->add(
-                Url::create('/exams/2/subjects')
-                    ->setPriority(0.7)
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-            )
-           // LET (Criminology Licensure Examination) subjects
-           ->add(
-                Url::create('/exams/3/subjects')
-                     ->setPriority(0.7)
-                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-           )
-           // MLE (Midwifery Licensure Examination) subjects
-           ->add(
-            Url::create('/exams/3/subjects')
-                 ->setPriority(0.7)
-                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-       )           
+            );
+        }
+
+        // Static pages: About & Donation
+        $sitemap
             ->add(
                 Url::create('/about')
-                    ->setPriority(0.5)
+                    ->setLastModificationDate($now)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.5)
             )
             ->add(
                 Url::create('/donation')
-                    ->setPriority(0.5)
+                    ->setLastModificationDate($now)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.5)
             );
-            // → add more Url::create(...) calls here for other routes
 
+        // Write to file
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
         $this->info('✅ Sitemap generated successfully at public/sitemap.xml');
