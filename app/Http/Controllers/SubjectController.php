@@ -64,7 +64,18 @@ class SubjectController extends Controller
                 ['id' => 30, 'name' => 'Primary Health Care'],
                 ['id' => 31, 'name' => 'Professional Growth & Development'],
             ];
-        }
+    } elseif ($examId == 5) {
+            // MTLE
+            $examName = 'Medical Technology Licensure Examination (MTLE)';
+            $subjects = [
+                ['id' => 32, 'name' => 'Clinical Chemistry'],
+                ['id' => 33, 'name' => 'Microbiology & Parasitology'],
+                ['id' => 34, 'name' => 'Hematology'],
+                ['id' => 35, 'name' => 'Blood Banking & Serology'],
+                ['id' => 36, 'name' => 'Clinical Microscopy'],
+                ['id' => 37, 'name' => 'Histopathologic Techniques & MT Laws'],
+            ];
+    }
 
         // Build SEO metadata
         $now = Carbon::now();
@@ -113,6 +124,15 @@ class SubjectController extends Controller
                     'heading'     => 'Free MLE Reviewers',
                 ];
                 break;
+                case 5:
+                    $seo = [
+                        'title'       => 'Free MTLE Reviewers | PRC Board Reviewers PH',
+                        'description' => 'Get free Medical Technology Licensure Exam reviewers—practice tests and review materials.',
+                        'canonical'   => route('mle.reviewers'),
+                        'lastmod'     => $now->toDateString(),
+                        'heading'     => 'Free MLE Reviewers',
+                    ];
+                    break;
         }
 
         return Inertia::render('Subjects', [

@@ -35,12 +35,19 @@ class SubjectsTableSeeder extends Seeder
           ['id' => 23, 'name' => 'Crime Detection, Investigation & Prevention', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 24, 'name' => 'Criminalistics', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 25, 'name' => 'Correctional Administration', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 26, 'name' => 'Criminal Sociology, Ethics and Human Relations', 'created_at' => now(), 'updated_at' => now()],*/
+          ['id' => 26, 'name' => 'Criminal Sociology, Ethics and Human Relations', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 27, 'name' => 'Obstetrics & Gynecology', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 28, 'name' => 'Fundamentals of Health Care', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 29, 'name' => 'Infant Care & Feeding', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 30, 'name' => 'Primary Health Care', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 31, 'name' => 'Professional Growth & Development', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 31, 'name' => 'Professional Growth & Development', 'created_at' => now(), 'updated_at' => now()],*/
+          ['id' => 32, 'name' => 'Clinical Chemistry', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 33, 'name' => 'Microbiology & Parasitology', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 34, 'name' => 'Hematology', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 35, 'name' => 'Blood Banking & Serology', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 36, 'name' => 'Clinical Microscopy', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 37, 'name' => 'Histopathologic Techniques & MT Laws', 'created_at' => now(), 'updated_at' => now()],
+          
           // …add more as needed…
         ]);
     }

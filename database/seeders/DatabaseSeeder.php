@@ -321,7 +321,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart7Seeder::class, 
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart8Seeder::class, 
 		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart9Seeder::class, 
-		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart10Seeder::class, */
+		\Database\Seeders\CLE\CriminalSociologyEthicsHumanRelations\CriminalSociologyEthicsHumanRelationsPart10Seeder::class, 
 
 //MLE - ObstetricsAndGynecology - ID 27
 		\Database\Seeders\MLE\ObstetricsAndGynecology\ObstetricsAndGynecologyPart1Seeder::class,
@@ -381,15 +381,83 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart7Seeder::class,
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart8Seeder::class,
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart9Seeder::class,
-		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart10Seeder::class,
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart10Seeder::class, 
+
+//MTLE - ClinicalChemistry - ID 32
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart1Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart2Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart3Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart4Seeder::class,  
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart5Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart6Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart7Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart8Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart9Seeder::class,
+		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart10Seeder::class, 
+
+//MTLE - MicrobiologyAndParasitology - ID 33
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart1Seeder::class, 
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart2Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart3Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart4Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart5Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart6Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart7Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart8Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart9Seeder::class,
+		\Database\Seeders\MTLE\MicrobiologyAndParasitology\MicrobiologyAndParasitologyPart10Seeder::class,
+
+//MTLE - Hematology - ID 34
+		\Database\Seeders\MTLE\Hematology\HematologyPart1Seeder::class, 
+		\Database\Seeders\MTLE\Hematology\HematologyPart2Seeder::class, 
+		\Database\Seeders\MTLE\Hematology\HematologyPart3Seeder::class, 
+		\Database\Seeders\MTLE\Hematology\HematologyPart4Seeder::class, 
+		\Database\Seeders\MTLE\Hematology\HematologyPart5Seeder::class,
+		\Database\Seeders\MTLE\Hematology\HematologyPart6Seeder::class, 
+		\Database\Seeders\MTLE\Hematology\HematologyPart7Seeder::class,  
+		\Database\Seeders\MTLE\Hematology\HematologyPart8Seeder::class, 
+		\Database\Seeders\MTLE\Hematology\HematologyPart9Seeder::class, 
+		\Database\Seeders\MTLE\Hematology\HematologyPart10Seeder::class,
+
+//MTLE - BloodBankingAndSerology - ID 35
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart1Seeder::class, 
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart2Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart3Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart4Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart5Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart6Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart7Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart8Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart9Seeder::class,
+		\Database\Seeders\MTLE\BloodBankingAndSerology\BloodBankingAndSerologyPart10Seeder::class,
 		
+//MTLE - ClinicalMicroscopy - ID 36
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart1Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart2Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart3Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart4Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart5Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart6Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart7Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart8Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart9Seeder::class,
+		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart10Seeder::class,
+
+//MTLE - ClinicalMicroscopy - ID 36
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart1Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart2Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart3Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart4Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart5Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart6Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart7Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart8Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart9Seeder::class,*/
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart10Seeder::class,
 
 
-	    
-
-
-             \Database\Seeders\SubjectsTableSeeder::class,
-          \Database\Seeders\ExamsTableSeeder::class, 
+          /*  \Database\Seeders\SubjectsTableSeeder::class,
+          \Database\Seeders\ExamsTableSeeder::class, */
              
              
         ]);

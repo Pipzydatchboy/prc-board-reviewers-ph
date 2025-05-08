@@ -1,18 +1,18 @@
 {
-  "_Layout-DGEeYhrf.js": {
-    "file": "assets/Layout-DGEeYhrf.js",
+  "_Layout-TuMMvNot.js": {
+    "file": "assets/Layout-TuMMvNot.js",
     "name": "Layout",
     "imports": [
       "resources/js/app.tsx"
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app-yM17t3Ux.css",
+    "file": "assets/app-DuStLmEh.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-FxLiBdk1.js",
+    "file": "assets/app-XHTvI2s6.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
@@ -28,11 +28,11 @@
       "resources/js/pages/welcome.tsx"
     ],
     "css": [
-      "assets/app-yM17t3Ux.css"
+      "assets/app-DuStLmEh.css"
     ]
   },
   "resources/js/components/CoreValuesSection.tsx": {
-    "file": "assets/CoreValuesSection-CUGsmema.js",
+    "file": "assets/CoreValuesSection-BZGosvDj.js",
     "name": "CoreValuesSection",
     "src": "resources/js/components/CoreValuesSection.tsx",
     "isDynamicEntry": true,
@@ -41,7 +41,7 @@
     ]
   },
   "resources/js/components/FAQs.tsx": {
-    "file": "assets/FAQs-CjRJOvf2.js",
+    "file": "assets/FAQs-BxsocCJ5.js",
     "name": "FAQs",
     "src": "resources/js/components/FAQs.tsx",
     "isDynamicEntry": true,
@@ -50,7 +50,7 @@
     ]
   },
   "resources/js/components/MissionSection.tsx": {
-    "file": "assets/MissionSection-BCyrpS-u.js",
+    "file": "assets/MissionSection-DVvsiK4z.js",
     "name": "MissionSection",
     "src": "resources/js/components/MissionSection.tsx",
     "isDynamicEntry": true,
@@ -59,7 +59,7 @@
     ]
   },
   "resources/js/components/PartsGrid.tsx": {
-    "file": "assets/PartsGrid-DNSPyixa.js",
+    "file": "assets/PartsGrid-BNMa1PYp.js",
     "name": "PartsGrid",
     "src": "resources/js/components/PartsGrid.tsx",
     "isDynamicEntry": true,
@@ -68,7 +68,7 @@
     ]
   },
   "resources/js/components/Testimonials.tsx": {
-    "file": "assets/Testimonials-CdNwDKJb.js",
+    "file": "assets/Testimonials-Do8yC5gH.js",
     "name": "Testimonials",
     "src": "resources/js/components/Testimonials.tsx",
     "isDynamicEntry": true,
@@ -77,7 +77,7 @@
     ]
   },
   "resources/js/components/VisionSection.tsx": {
-    "file": "assets/VisionSection-DcvIASCR.js",
+    "file": "assets/VisionSection-CgIHma-6.js",
     "name": "VisionSection",
     "src": "resources/js/components/VisionSection.tsx",
     "isDynamicEntry": true,
@@ -86,7 +86,7 @@
     ]
   },
   "resources/js/components/breadcrumbs.tsx": {
-    "file": "assets/breadcrumbs-2iv_3lrR.js",
+    "file": "assets/breadcrumbs-DbyGkgWs.js",
     "name": "breadcrumbs",
     "src": "resources/js/components/breadcrumbs.tsx",
     "isDynamicEntry": true,
@@ -95,13 +95,13 @@
     ]
   },
   "resources/js/pages/About.tsx": {
-    "file": "assets/About-DpCINBGH.js",
+    "file": "assets/About-BxzRfjSC.js",
     "name": "About",
     "src": "resources/js/pages/About.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_Layout-DGEeYhrf.js"
+      "_Layout-TuMMvNot.js"
     ],
     "dynamicImports": [
       "resources/js/components/breadcrumbs.tsx",
@@ -111,36 +111,36 @@
     ]
   },
   "resources/js/pages/Donation.tsx": {
-    "file": "assets/Donation-m0qwsVYP.js",
+    "file": "assets/Donation-xoFvg84f.js",
     "name": "Donation",
     "src": "resources/js/pages/Donation.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_Layout-DGEeYhrf.js"
+      "_Layout-TuMMvNot.js"
     ]
   },
   "resources/js/pages/Exams.tsx": {
-    "file": "assets/Exams-CCI7kPPV.js",
+    "file": "assets/Exams-z8gugfBq.js",
     "name": "Exams",
     "src": "resources/js/pages/Exams.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_Layout-DGEeYhrf.js"
+      "_Layout-TuMMvNot.js"
     ],
     "dynamicImports": [
       "resources/js/components/breadcrumbs.tsx"
     ]
   },
   "resources/js/pages/HomePage.tsx": {
-    "file": "assets/HomePage-BLRwXPDc.js",
+    "file": "assets/HomePage-C0QziJwK.js",
     "name": "HomePage",
     "src": "resources/js/pages/HomePage.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_Layout-DGEeYhrf.js"
+      "_Layout-TuMMvNot.js"
     ],
     "dynamicImports": [
       "resources/js/components/Testimonials.tsx",
@@ -148,13 +148,13 @@
     ]
   },
   "resources/js/pages/Parts.tsx": {
-    "file": "assets/Parts-BWX1KWP0.js",
+    "file": "assets/Parts-Dz3qzdbD.js",
     "name": "Parts",
     "src": "resources/js/pages/Parts.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_Layout-DGEeYhrf.js"
+      "_Layout-TuMMvNot.js"
     ],
     "dynamicImports": [
       "resources/js/components/PartsGrid.tsx",
@@ -162,18 +162,18 @@
     ]
   },
   "resources/js/pages/Questions.tsx": {
-    "file": "assets/Questions-DhP-yO3x.js",
+    "file": "assets/Questions-Bglt06we.js",
     "name": "Questions",
     "src": "resources/js/pages/Questions.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_Layout-DGEeYhrf.js",
+      "_Layout-TuMMvNot.js",
       "resources/js/components/breadcrumbs.tsx"
     ]
   },
   "resources/js/pages/ResultPage.tsx": {
-    "file": "assets/ResultPage-CuRKa3oz.js",
+    "file": "assets/ResultPage-B6TEf_tC.js",
     "name": "ResultPage",
     "src": "resources/js/pages/ResultPage.tsx",
     "isDynamicEntry": true,
@@ -182,17 +182,17 @@
     ]
   },
   "resources/js/pages/Subjects.tsx": {
-    "file": "assets/Subjects-CIHM2oCK.js",
+    "file": "assets/Subjects-gmAp4lr2.js",
     "name": "Subjects",
     "src": "resources/js/pages/Subjects.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_Layout-DGEeYhrf.js"
+      "_Layout-TuMMvNot.js"
     ]
   },
   "resources/js/pages/welcome.tsx": {
-    "file": "assets/welcome-Be1o7lAJ.js",
+    "file": "assets/welcome-CSwkvR1D.js",
     "name": "welcome",
     "src": "resources/js/pages/welcome.tsx",
     "isDynamicEntry": true,

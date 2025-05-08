@@ -50,6 +50,13 @@ class PartController extends Controller
             29 => 'Infant Care & Feeding',
             30 => 'Primary Health Care',
             31 => 'Professional Growth & Development',
+           // MTLE Subjects
+            32 => 'Clinical Chemistry',
+            33 => 'Microbiology & Parasitology',
+            34 => 'Hematology',
+            35 => 'Blood Banking & Serology',
+            36 => 'Clinical Microscopy',
+            37 => 'Histopathologic Techniques & MT Laws',
         ];
 
         // Determine the display name
