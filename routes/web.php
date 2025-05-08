@@ -10,6 +10,7 @@ use App\Http\Controllers\PartController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\PrivacyPolicyController;  // <— added
 
 /*
 |--------------------------------------------------------------------------
@@ -29,47 +30,37 @@ Route::get('/about', [AboutController::class, 'index'])
 Route::get('/donation', [DonationController::class, 'index'])
     ->name('donation');
 
+// Privacy Policy Page (uses PrivacyPolicyController)
+Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index'])
+    ->name('privacy.policy');
+
 // Exam Flow Routes
 Route::get('/exams', [ExamController::class, 'index'])
     ->name('exams.index');
 
-/*
-|──────────────────────────────────────────────────────────────────────────
-| SEO‑Friendly Reviewers Aliases
-|──────────────────────────────────────────────────────────────────────────
-*/
-
-// Civil Service Exam (CSE) Reviewers
+// SEO-Friendly Reviewers Aliases
 Route::get('/cse-reviewers', [SubjectController::class, 'index'])
     ->defaults('exam', 1)
     ->name('cse.reviewers');
-
-// Licensure Exam for Teachers (LET) Reviewers
 Route::get('/let-reviewers', [SubjectController::class, 'index'])
     ->defaults('exam', 2)
     ->name('let.reviewers');
-
-// Criminology Licensure Examination (CLE) Reviewers
 Route::get('/cle-reviewers', [SubjectController::class, 'index'])
     ->defaults('exam', 3)
     ->name('cle.reviewers');
-
-// Midwifery Licensure Examination (MLE) Reviewers
 Route::get('/mle-reviewers', [SubjectController::class, 'index'])
     ->defaults('exam', 4)
     ->name('mle.reviewers');
+Route::get('/mtle-reviewers', [SubjectController::class, 'index'])
+    ->defaults('exam', 5)
+    ->name('mtle.reviewers');
 
-/*
-|──────────────────────────────────────────────────────────────────────────
-| Generic Subjects listing (fallback for any other exam IDs)
-|──────────────────────────────────────────────────────────────────────────
-*/
+
+// Generic Subjects listing (fallback for any other exam IDs)
 Route::get('/exams/{exam}/subjects', [SubjectController::class, 'index'])
     ->name('subjects.index');
-
 Route::get('/exams/{exam}/subjects/{subject}/parts', [PartController::class, 'index'])
     ->name('parts.index');
-
 Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/questions', [QuestionController::class, 'index'])
     ->name('questions.index');
 
@@ -86,7 +77,6 @@ Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($ex
 Route::get('/sitemap.xml', function () {
     return response()->file(public_path('sitemap.xml'));
 });
-
 Route::get('/robots.txt', function () {
     return response(
         "User-agent: *\nDisallow:\nSitemap: " . url('/sitemap.xml'),
@@ -110,7 +100,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| Fallback Route (Catch‑all 404 → Home)
+| Fallback Route (Catch-all 404 → Home)
 |--------------------------------------------------------------------------
 */
 Route::fallback(function () {

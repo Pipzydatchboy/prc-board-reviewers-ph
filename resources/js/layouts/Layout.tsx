@@ -82,9 +82,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Footer */}
       <footer className="bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm">
-          © {new Date().getFullYear()} PRC Board Reviewers PH. All rights reserved.
-        </div>
-      </footer>
+        © {new Date().getFullYear()} PRC Board Reviewers PH. All rights reserved.{' '}
+            <Link href="/privacy-policy" className="underline hover:text-yellow-300">
+               Privacy Policy
+            </Link>
+       </div>
+</footer>
+
     </>
   );
 };

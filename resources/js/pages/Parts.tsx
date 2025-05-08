@@ -27,7 +27,14 @@ type PartsProps = {
   seo: SeoProps;
 };
 
-const Parts: React.FC<PartsProps> = ({ parts, subjectName, examId, subjectId, examName, seo }) => {
+const Parts: React.FC<PartsProps> = ({
+  parts,
+  subjectName,
+  examId,
+  subjectId,
+  examName,
+  seo,
+}) => {
   const memoizedParts = useMemo(() => parts, [parts]);
 
   const breadcrumbItems = [
@@ -52,14 +59,14 @@ const Parts: React.FC<PartsProps> = ({ parts, subjectName, examId, subjectId, ex
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <div className="p-6 max-w-4xl mx-auto">
+      <div className="px-4 py-6 max-w-4xl mx-auto">
         {/* Breadcrumbs */}
-        <Suspense fallback={<div className="text-center py-4">Loading breadcrumbs...</div>}>
+        <Suspense fallback={<div className="text-center py-4">Loading breadcrumbs…</div>}>
           <Breadcrumbs items={breadcrumbItems} />
         </Suspense>
 
         {/* Page Title */}
-        <h1 className="text-3xl font-bold mb-4 text-center text-green-700">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center text-green-700">
           {seo.heading}
         </h1>
 
