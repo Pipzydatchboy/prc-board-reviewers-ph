@@ -381,7 +381,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart7Seeder::class,
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart8Seeder::class,
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart9Seeder::class,
-		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart10Seeder::class, 
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart10Seeder::class, */
 
 //MTLE - ClinicalChemistry - ID 32
 		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart1Seeder::class,
@@ -452,12 +452,12 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart6Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart7Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart8Seeder::class,
-		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart9Seeder::class,*/
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart9Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart10Seeder::class,
 
 
-          /*  \Database\Seeders\SubjectsTableSeeder::class,
-          \Database\Seeders\ExamsTableSeeder::class, */
+            \Database\Seeders\SubjectsTableSeeder::class,
+          \Database\Seeders\ExamsTableSeeder::class, 
              
              
         ]);
