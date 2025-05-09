@@ -57,6 +57,10 @@ class PartController extends Controller
             35 => 'Blood Banking & Serology',
             36 => 'Clinical Microscopy',
             37 => 'Histopathologic Techniques & MT Laws',
+          // CELE Subjects
+            32 => 'Applied Mathematics, Surveying & Transportation Engineering',
+            33 => 'Hydraulics & Geotechnical Engineering',
+            34 => 'Structural Engineering & Construction',
         ];
 
         // Determine the display name
