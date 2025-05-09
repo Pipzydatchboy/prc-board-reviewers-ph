@@ -381,7 +381,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart7Seeder::class,
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart8Seeder::class,
 		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart9Seeder::class,
-		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart10Seeder::class, */
+		\Database\Seeders\MLE\ProfessionalGrowthAndDevelopment\ProfessionalGrowthAndDevelopmentPart10Seeder::class, 
 
 //MTLE - ClinicalChemistry - ID 32
 		\Database\Seeders\MTLE\ClinicalChemistry\ClinicalChemistryPart1Seeder::class,
@@ -443,7 +443,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart9Seeder::class,
 		\Database\Seeders\MTLE\ClinicalMicroscopy\ClinicalMicroscopyPart10Seeder::class,
 
-//MTLE - ClinicalMicroscopy - ID 36
+//MTLE - ClinicalMicroscopy - ID 37
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart1Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart2Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart3Seeder::class,
@@ -453,11 +453,46 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart7Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart8Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart9Seeder::class,
-		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart10Seeder::class,
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart10Seeder::class, */
 
+//CELE - ClinicalMicroscopy - ID 38
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart1Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart2Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart3Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart4Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart5Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart6Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart7Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart8Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart9Seeder::class,
+		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart10Seeder::class,
 
-            \Database\Seeders\SubjectsTableSeeder::class,
-          \Database\Seeders\ExamsTableSeeder::class, 
+//CELE - HydraulicsAndGeotechnicalEngineering - ID 39
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart1Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart2Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart3Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart4Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart5Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart6Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart7Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart8Seeder::class,
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart9Seeder::class, 
+		\Database\Seeders\CELE\HydraulicsAndGeotechnicalEngineering\HydraulicsAndGeotechnicalEngineeringPart10Seeder::class,
+
+//CELE - StructuralEngineeringAndConstruction - ID 40
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart1Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart2Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart3Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart4Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart5Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart6Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart7Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart8Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart9Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart10Seeder::class,
+
+          /*  \Database\Seeders\SubjectsTableSeeder::class,
+          \Database\Seeders\ExamsTableSeeder::class, */
              
              
         ]);

@@ -64,7 +64,7 @@ class SubjectController extends Controller
                 ['id' => 30, 'name' => 'Primary Health Care'],
                 ['id' => 31, 'name' => 'Professional Growth & Development'],
             ];
-    } elseif ($examId == 5) {
+        } elseif ($examId == 5) {
             // MTLE
             $examName = 'Medical Technology Licensure Examination (MTLE)';
             $subjects = [
@@ -75,7 +75,14 @@ class SubjectController extends Controller
                 ['id' => 36, 'name' => 'Clinical Microscopy'],
                 ['id' => 37, 'name' => 'Histopathologic Techniques & MT Laws'],
             ];
-    }
+        } elseif ($examId == 6) { // CELE
+            $examName = 'Civil Engineering Licensure Examination (MTLE)';
+            $subjects = [
+                ['id' => 38, 'name' => 'Applied Mathematics, Surveying & Transportation Engineering'],
+                ['id' => 39, 'name' => 'Hydraulics & Geotechnical Engineering'],
+                ['id' => 40, 'name' => 'Structural Engineering & Construction'],
+            ];
+        }
 
         // Build SEO metadata
         $now = Carbon::now();
@@ -132,7 +139,16 @@ class SubjectController extends Controller
                         'lastmod'     => $now->toDateString(),
                         'heading'     => 'Free MLE Reviewers',
                     ];
-                    break;
+                 break;
+                 case 6:
+                        $seo = [
+                            'title'       => 'Free CELE Reviewers | PRC Board Reviewers PH',
+                            'description' => 'Get free Civil Engineering Licensure Exam reviewers—practice tests and review materials.',
+                            'canonical'   => route('cele.reviewers'),
+                            'lastmod'     => $now->toDateString(),
+                            'heading'     => 'Free CELE Reviewers',
+                        ];
+                        break;
         }
 
         return Inertia::render('Subjects', [
