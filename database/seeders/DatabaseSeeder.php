@@ -453,7 +453,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart7Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart8Seeder::class,
 		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart9Seeder::class,
-		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart10Seeder::class, */
+		\Database\Seeders\MTLE\HistopathologicTechniquesAndMTLaws\HistopathologicTechniquesAndMTLawsPart10Seeder::class, 
 
 //CELE - ClinicalMicroscopy - ID 38
 		\Database\Seeders\CELE\AppliedMathematicsSurveyingAndTransportationEngineering\AppliedMathematicsSurveyingAndTransportationEngineeringPart1Seeder::class,
@@ -489,10 +489,10 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart7Seeder::class,
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart8Seeder::class,
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart9Seeder::class,
-		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart10Seeder::class,
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart10Seeder::class, */
 
-          /*  \Database\Seeders\SubjectsTableSeeder::class,
-          \Database\Seeders\ExamsTableSeeder::class, */
+           \Database\Seeders\SubjectsTableSeeder::class,
+          \Database\Seeders\ExamsTableSeeder::class, 
              
              
         ]);

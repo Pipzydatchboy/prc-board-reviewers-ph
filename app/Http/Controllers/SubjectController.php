@@ -76,7 +76,7 @@ class SubjectController extends Controller
                 ['id' => 37, 'name' => 'Histopathologic Techniques & MT Laws'],
             ];
         } elseif ($examId == 6) { // CELE
-            $examName = 'Civil Engineering Licensure Examination (MTLE)';
+            $examName = 'Civil Engineering Licensure Examination (CELE)';
             $subjects = [
                 ['id' => 38, 'name' => 'Applied Mathematics, Surveying & Transportation Engineering'],
                 ['id' => 39, 'name' => 'Hydraulics & Geotechnical Engineering'],
