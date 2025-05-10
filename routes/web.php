@@ -57,7 +57,9 @@ Route::get('/mtle-reviewers', [SubjectController::class, 'index'])
 Route::get('/cele-reviewers', [SubjectController::class, 'index'])
     ->defaults('exam', 6)
     ->name('cele.reviewers');
-
+Route::get('/foe-reviewers', [SubjectController::class, 'index'])
+    ->defaults('exam', 7)
+    ->name('foe.reviewers');
 
 // Generic Subjects listing (fallback for any other exam IDs)
 Route::get('/exams/{exam}/subjects', [SubjectController::class, 'index'])

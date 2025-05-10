@@ -58,9 +58,15 @@ class PartController extends Controller
             36 => 'Clinical Microscopy',
             37 => 'Histopathologic Techniques & MT Laws',
           // CELE Subjects
-            32 => 'Applied Mathematics, Surveying & Transportation Engineering',
-            33 => 'Hydraulics & Geotechnical Engineering',
-            34 => 'Structural Engineering & Construction',
+            38 => 'Applied Mathematics, Surveying & Transportation Engineering',
+            39 => 'Hydraulics & Geotechnical Engineering',
+            40 => 'Structural Engineering & Construction',
+          // FOE Subjects
+            41 => 'General Ability',
+            42 => 'Fire Suppression',
+            43 => 'Fire Safety & Prevention',
+            44 => 'Fire Investigation',
+            45 => 'Administrative Matters',
         ];
 
         // Determine the display name

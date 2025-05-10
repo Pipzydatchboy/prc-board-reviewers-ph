@@ -491,7 +491,68 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart9Seeder::class,
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart10Seeder::class, */
 
-           \Database\Seeders\SubjectsTableSeeder::class,
+//FOE - GeneralAbility - ID 41
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart1Seeder::class,
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart2Seeder::class,
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart3Seeder::class,
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart4Seeder::class,
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart5Seeder::class,
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart6Seeder::class, 
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart7Seeder::class, 
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart8Seeder::class, 
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart9Seeder::class, 
+		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart10Seeder::class,
+
+//FOE - FireSuppresion - ID 42
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart1Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart2Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart3Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart4Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart5Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart6Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart7Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart8Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart9Seeder::class,
+		\Database\Seeders\FOE\FireSuppression\FireSuppressionPart10Seeder::class,
+
+//FOE - FireSafetyAndPrevention - ID 43
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart1Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart2Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart3Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart4Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart5Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart6Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart7Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart8Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart9Seeder::class,
+		\Database\Seeders\FOE\FireSafetyAndPrevention\FireSafetyAndPreventionPart10Seeder::class, 
+
+//FOE - FireInvestigation - ID 44
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart1Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart2Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart3Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart4Seeder::class, 
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart5Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart6Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart7Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart8Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart9Seeder::class,
+		\Database\Seeders\FOE\FireInvestigation\FireInvestigationPart10Seeder::class, 
+
+//FOE - AdministrativeMatters - ID 45
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart1Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart2Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart3Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart4Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart5Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart6Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart7Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart8Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart9Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart10Seeder::class,
+
+
+         \Database\Seeders\SubjectsTableSeeder::class,
           \Database\Seeders\ExamsTableSeeder::class, 
              
              

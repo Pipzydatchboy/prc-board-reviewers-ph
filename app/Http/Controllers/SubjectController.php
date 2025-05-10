@@ -82,6 +82,15 @@ class SubjectController extends Controller
                 ['id' => 39, 'name' => 'Hydraulics & Geotechnical Engineering'],
                 ['id' => 40, 'name' => 'Structural Engineering & Construction'],
             ];
+        } elseif ($examId == 7) { // FEO
+            $examName = 'Fire Officer Examination (FOE)';
+            $subjects = [
+                ['id' => 41, 'name' => 'General Ability'],
+                ['id' => 42, 'name' => 'Fire Suppression'],
+                ['id' => 43, 'name' => 'Fire Safety & Prevention'],
+                ['id' => 44, 'name' => 'Fire Investigation'],
+                ['id' => 45, 'name' => 'Administrative Matters'],
+            ];
         }
 
         // Build SEO metadata
@@ -147,6 +156,15 @@ class SubjectController extends Controller
                             'canonical'   => route('cele.reviewers'),
                             'lastmod'     => $now->toDateString(),
                             'heading'     => 'Free CELE Reviewers',
+                        ];
+                 break;
+                 case 7:
+                        $seo = [
+                            'title'       => 'Free FOE Reviewers | PRC Board Reviewers PH',
+                            'description' => 'Get free Fire Officer Examination reviewers—practice tests and review materials.',
+                            'canonical'   => route('foe.reviewers'),
+                            'lastmod'     => $now->toDateString(),
+                            'heading'     => 'Free FOE Reviewers',
                         ];
                         break;
         }

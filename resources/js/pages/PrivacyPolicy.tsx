@@ -92,7 +92,7 @@ export default function PrivacyPolicy({ seo }: Props) {
           <p>
             Questions? Email us at{' '}
             <a
-              href="mailto:privacy@prcboardreviewersph.com"
+              href="prcboardreviewersph@gmail.com"
               className="text-green-700 hover:underline"
             >
               privacy@prcboardreviewersph.com

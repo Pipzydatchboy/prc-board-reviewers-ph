@@ -19,6 +19,8 @@ class ExamController extends Controller
             ['id' => 4, 'name' => 'Midwifery Licensure Examination (MLE)'],
             ['id' => 5, 'name' => 'Medical Technology Licensure Examination (MTLE)'],
             ['id' => 6, 'name' => 'Civil Engineering Licensure Examination (CELE)'],
+            ['id' => 7, 'name' => 'Fire Officer Examination (FOE)'],
+
         ];
 
         // SEO metadata
