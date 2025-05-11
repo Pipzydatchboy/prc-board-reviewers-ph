@@ -489,7 +489,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart7Seeder::class,
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart8Seeder::class,
 		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart9Seeder::class,
-		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart10Seeder::class, */
+		\Database\Seeders\CELE\StructuralEngineeringAndConstruction\StructuralEngineeringAndConstructionPart10Seeder::class, 
 
 //FOE - GeneralAbility - ID 41
 		\Database\Seeders\FOE\GeneralAbility\GeneralAbilityPart1Seeder::class,
@@ -549,7 +549,55 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart7Seeder::class,
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart8Seeder::class,
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart9Seeder::class,
-		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart10Seeder::class,
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart10Seeder::class, */
+
+//MPLE - PlumbingArithmetic - ID 46
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart1Seeder::class,
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart2Seeder::class,
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart3Seeder::class, 
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart4Seeder::class, 
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart5Seeder::class, 
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart6Seeder::class,
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart7Seeder::class,
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart8Seeder::class,
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart9Seeder::class, 
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart10Seeder::class,
+
+//MPLE - SanitationPlumbingDesignInstallation - ID 47
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart1Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart2Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart3Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart4Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart5Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart6Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart7Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart8Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart9Seeder::class,
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart10Seeder::class, 
+
+//MPLE - PlumbingCode - ID 48
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart1Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart2Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart3Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart4Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart5Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart6Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart7Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart8Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart9Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart10Seeder::class,
+
+//MPLE - PracticalProblemsAndExperiences - ID 49
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart1Seeder::class, 
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart2Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart3Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart4Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart5Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart6Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart7Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart8Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart9Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart10Seeder::class,
 
 
          \Database\Seeders\SubjectsTableSeeder::class,

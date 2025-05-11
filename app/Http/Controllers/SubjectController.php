@@ -91,7 +91,15 @@ class SubjectController extends Controller
                 ['id' => 44, 'name' => 'Fire Investigation'],
                 ['id' => 45, 'name' => 'Administrative Matters'],
             ];
-        }
+        }  elseif ($examId == 8) { // MPLE
+            $examName = 'FMaster Plumber Licensure Examination (MPLE)';
+            $subjects = [
+                ['id' => 46, 'name' => 'Plumbing Arithmetic'],
+                ['id' => 47, 'name' => 'Sanitation, Plumbing Design & Installation'],
+                ['id' => 48, 'name' => 'Plumbing Code'],
+                ['id' => 49, 'name' => 'Practical Problems & Experiences'],
+            ];
+        } 
 
         // Build SEO metadata
         $now = Carbon::now();

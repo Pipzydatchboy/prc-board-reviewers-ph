@@ -20,6 +20,7 @@ class ExamController extends Controller
             ['id' => 5, 'name' => 'Medical Technology Licensure Examination (MTLE)'],
             ['id' => 6, 'name' => 'Civil Engineering Licensure Examination (CELE)'],
             ['id' => 7, 'name' => 'Fire Officer Examination (FOE)'],
+            ['id' => 8, 'name' => 'Master Plumber Licensure Examination (MPLE)'],
 
         ];
 

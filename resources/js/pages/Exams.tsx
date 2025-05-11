@@ -6,9 +6,7 @@ import Layout from '../layouts/Layout';
 const Breadcrumbs = lazy(() => import('../components/breadcrumbs'));
 
 type Exam = { id: number; name: string; };
-
 type SeoProps = { title: string; description: string; canonical: string; heading: string; };
-
 type ExamsProps = { exams: Exam[]; seo: SeoProps; };
 
 export default function Exams({ exams, seo }: ExamsProps) {
@@ -54,7 +52,15 @@ export default function Exams({ exams, seo }: ExamsProps) {
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Search exams..."
-          className="w-full sm:w-1/3 px-4 py-2 border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="
+            w-full sm:w-1/3
+            px-4 py-2
+            border rounded-lg shadow
+            text-gray-900
+            placeholder-gray-400
+            focus:outline-none
+            focus:ring-2 focus:ring-green-500
+          "
         />
       </div>
 

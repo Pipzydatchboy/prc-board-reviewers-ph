@@ -49,12 +49,16 @@ class SubjectsTableSeeder extends Seeder
           ['id' => 37, 'name' => 'Histopathologic Techniques & MT Laws', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 38, 'name' => 'Applied Mathematics, Surveying & Transportation Engineering', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 39, 'name' => 'Hydraulics & Geotechnical Engineering', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 40, 'name' => 'Structural Engineering & Construction', 'created_at' => now(), 'updated_at' => now()],*/
+          ['id' => 40, 'name' => 'Structural Engineering & Construction', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 41, 'name' => 'General Ability', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 42, 'name' => 'Fire Suppression', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 43, 'name' => 'Fire Safety & Prevention', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 44, 'name' => 'Fire Investigation', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 45, 'name' => 'Administrative Matters', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 45, 'name' => 'Administrative Matters', 'created_at' => now(), 'updated_at' => now()],*/
+          ['id' => 46, 'name' => 'Plumbing Arithmetic', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 47, 'name' => 'Sanitation, Plumbing Design & Installation', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 48, 'name' => 'Plumbing Code', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 49, 'name' => 'Practical Problems & Experiences', 'created_at' => now(), 'updated_at' => now()],
           // …add more as needed…
         ]);
     }

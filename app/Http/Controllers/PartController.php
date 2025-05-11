@@ -67,6 +67,11 @@ class PartController extends Controller
             43 => 'Fire Safety & Prevention',
             44 => 'Fire Investigation',
             45 => 'Administrative Matters',
+          // MPLE Subjects
+            41 => 'Plumbing Arithmetic',
+            42 => 'Sanitation, Plumbing Design & Installation',
+            43 => 'Plumbing Code',
+            44 => 'Practical Problems & Experiences',
         ];
 
         // Determine the display name

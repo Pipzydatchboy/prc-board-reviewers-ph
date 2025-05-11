@@ -95,7 +95,7 @@ export default function PrivacyPolicy({ seo }: Props) {
               href="prcboardreviewersph@gmail.com"
               className="text-green-700 hover:underline"
             >
-              privacy@prcboardreviewersph.com
+              prcboardreviewersph@gmail.com
             </a>
             .
           </p>
