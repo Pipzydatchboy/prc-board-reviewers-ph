@@ -549,7 +549,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart7Seeder::class,
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart8Seeder::class,
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart9Seeder::class,
-		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart10Seeder::class, */
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart10Seeder::class, 
 
 //MPLE - PlumbingArithmetic - ID 46
 		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart1Seeder::class,
@@ -573,15 +573,15 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart7Seeder::class,
 		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart8Seeder::class,
 		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart9Seeder::class,
-		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart10Seeder::class, 
+		\Database\Seeders\MPLE\SanitationPlumbingDesignAndInstallation\SanitationPlumbingDesignAndInstallationPart10Seeder::class, */
 
 //MPLE - PlumbingCode - ID 48
 		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart1Seeder::class,
-		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart2Seeder::class,
+		/*\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart2Seeder::class,
 		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart3Seeder::class,
-		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart4Seeder::class,
+		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart4Seeder::class,*/
 		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart5Seeder::class,
-		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart6Seeder::class,
+		/*\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart6Seeder::class,
 		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart7Seeder::class,
 		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart8Seeder::class,
 		\Database\Seeders\MPLE\PlumbingCode\PlumbingCodePart9Seeder::class,
@@ -597,7 +597,7 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart7Seeder::class,
 		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart8Seeder::class,
 		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart9Seeder::class,
-		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart10Seeder::class,
+		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart10Seeder::class, */
 
 
          \Database\Seeders\SubjectsTableSeeder::class,

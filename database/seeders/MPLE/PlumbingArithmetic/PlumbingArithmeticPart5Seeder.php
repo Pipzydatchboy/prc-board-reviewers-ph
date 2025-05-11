@@ -24,7 +24,7 @@ $batch = [
     // 1
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A circular pipe has an internal diameter of 200 mm. What is its cross-sectional area in cm²? (A = π·d²/4)',
         'choices'     => json_encode([
             '3,142 cm²',
@@ -40,7 +40,7 @@ $batch = [
     // 2
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'Convert a discharge of 0.1 m³/s into liters per minute.',
         'choices'     => json_encode([
             '6,000 L/min',
@@ -56,7 +56,7 @@ $batch = [
     // 3
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A run of DN50 pipe (≈2″) is 30 m long. If weight is 3 kg/m, what is total weight?',
         'choices'     => json_encode([
             '90 kg',
@@ -72,7 +72,7 @@ $batch = [
     // 4
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'How many minutes will it take to fill a 2 m³ tank at 500 L/min?',
         'choices'     => json_encode([
             '4 min',
@@ -88,7 +88,7 @@ $batch = [
     // 5
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A plumber charges ₱350 per hour. For a job of 9 hours, plus 12% VAT, what is the total labor bill?',
         'choices'     => json_encode([
             '₱3,528',
@@ -104,7 +104,7 @@ $batch = [
     // 6
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'Convert a slope of 3 in per 10 ft into percent.',
         'choices'     => json_encode([
             '2.5%',
@@ -120,7 +120,7 @@ $batch = [
     // 7
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A rectangular gutter is 300 mm wide and 150 mm deep. What is its area in cm²?',
         'choices'     => json_encode([
             '45,000 cm²',
@@ -136,7 +136,7 @@ $batch = [
     // 8
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'If a valve reduces flow by 15% from 1,000 L/min, what is the resulting flow?',
         'choices'     => json_encode([
             '850 L/min',
@@ -152,7 +152,7 @@ $batch = [
     // 9
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A plan scale is 1:100. A pipe drawn 5 cm long is what real length in meters?',
         'choices'     => json_encode([
             '5 m',
@@ -168,7 +168,7 @@ $batch = [
     // 10
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A cost estimate is ₱250,000. If contingency of 7% is added, what is the total?',
         'choices'     => json_encode([
             '₱267,500',
@@ -184,7 +184,7 @@ $batch = [
     // 11
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A flow of 2 ft³/s is how many gallons per minute?',
         'choices'     => json_encode([
             '897.6 gpm',
@@ -200,7 +200,7 @@ $batch = [
     // 12
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'Convert 500 mL/s to L/min.',
         'choices'     => json_encode([
             '30 L/min',
@@ -216,7 +216,7 @@ $batch = [
     // 13
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A bag of mortar yields 0.02 m³. How many bags to cover 1 m³?',
         'choices'     => json_encode([
             '50 bags',
@@ -232,7 +232,7 @@ $batch = [
     // 14
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'If water flows 600 L/hr, how many seconds to flow 100 L?',
         'choices'     => json_encode([
             '600 s',
@@ -248,7 +248,7 @@ $batch = [
     // 15
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A pump delivers 75 gal/min. What is the flow in m³/hr? (1 gal=3.785 L)',
         'choices'     => json_encode([
             '17.06 m³/hr',
@@ -264,7 +264,7 @@ $batch = [
     // 16
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'Convert 0.5 in to mm.',
         'choices'     => json_encode([
             '12.7 mm',
@@ -280,7 +280,7 @@ $batch = [
     // 17
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'What is 15% of 360?',
         'choices'     => json_encode([
             '54',
@@ -296,7 +296,7 @@ $batch = [
     // 18
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A job requires 24 m of tubing. It is sold in 6 m lengths. How many lengths must be purchased?',
         'choices'     => json_encode([
             '4',
@@ -312,7 +312,7 @@ $batch = [
     // 19
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'A slope 1:20 gives how many mm drop over 1 m?',
         'choices'     => json_encode([
             '50 mm',
@@ -328,7 +328,7 @@ $batch = [
     // 20
     [
         'subject_id'  => 46,
-        'part'        => 1,
+        'part'        => 5,
         'question'    => 'If cost of materials is ₱18,000 and labor ₱6,000, what is total cost plus 12% VAT?',
         'choices'     => json_encode([
             '₱27,000',
