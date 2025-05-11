@@ -600,8 +600,8 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart10Seeder::class, */
 
 
-         \Database\Seeders\SubjectsTableSeeder::class,
-          \Database\Seeders\ExamsTableSeeder::class, 
+         /*\Database\Seeders\SubjectsTableSeeder::class,
+          \Database\Seeders\ExamsTableSeeder::class, */
              
              
         ]);
