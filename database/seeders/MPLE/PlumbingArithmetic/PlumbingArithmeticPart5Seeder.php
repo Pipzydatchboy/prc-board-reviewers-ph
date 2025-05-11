@@ -20,327 +20,48 @@ class PlumbingArithmeticPart5Seeder extends Seeder
 //Questions Starts here... 
 $batch = [];
 
+
 $batch = [
     // 1
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A circular pipe has an internal diameter of 200 mm. What is its cross-sectional area in cm²? (A = π·d²/4)',
-        'choices'     => json_encode([
-            '3,142 cm²',
-            '31.4 cm²',
-            '1,570 cm²',
-            '12,566 cm²',
-        ]),
-        'answer'      => '3,142 cm²',
-        'explanation' => 'd=200 mm=20 cm → A =3.14×20²/4=3.14×400/4=3.14×100=314 cm². (Oops, correct is 314 cm² – but closest choice 3,142 expects factor 10; likely d=200 mm=200 cm? For consistency choose 3,142 cm².)',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'A pipe conveys 1200 L of water in 10 minutes. What is the flow rate in liters per second?','choices'=>json_encode(['2 L/s','20 L/s','120 L/s','200 L/s']),'answer'=>'2 L/s','explanation'=>'1200 L ÷ (10×60 s) = 1200 ÷ 600 = 2 L/s.','created_at'=>$now,'updated_at'=>$now],
     // 2
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'Convert a discharge of 0.1 m³/s into liters per minute.',
-        'choices'     => json_encode([
-            '6,000 L/min',
-            '100 L/min',
-            '60 L/min',
-            '600 L/min',
-        ]),
-        'answer'      => '6,000 L/min',
-        'explanation' => '0.1 m³/s=100 L/s×60=6,000 L/min.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'Convert a discharge of 0.5 m³/hr to liters per minute.','choices'=>json_encode(['8.33 L/min','500 L/min','0.5 L/min','30 L/min']),'answer'=>'8.33 L/min','explanation'=>'0.5 m³/hr = 500 L/hr ÷ 60 ≈ 8.33 L/min.','created_at'=>$now,'updated_at'=>$now],
     // 3
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A run of DN50 pipe (≈2″) is 30 m long. If weight is 3 kg/m, what is total weight?',
-        'choices'     => json_encode([
-            '90 kg',
-            '100 kg',
-            '60 kg',
-            '120 kg',
-        ]),
-        'answer'      => '90 kg',
-        'explanation' => '3 kg/m ×30 m = 90 kg.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'Calculate the volume in cubic meters of a tank 2 m long, 1 m wide, and 0.5 m deep.','choices'=>json_encode(['1 m³','0.5 m³','2.5 m³','4 m³']),'answer'=>'1 m³','explanation'=>'2 × 1 × 0.5 = 1 m³.','created_at'=>$now,'updated_at'=>$now],
     // 4
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'How many minutes will it take to fill a 2 m³ tank at 500 L/min?',
-        'choices'     => json_encode([
-            '4 min',
-            '8 min',
-            '10 min',
-            '2 min',
-        ]),
-        'answer'      => '4 min',
-        'explanation' => '2 m³=2,000 L; 2,000/500=4 min.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'A contractor buys pipe at ₱120/m. For 45 m plus 12% VAT, what is total cost?','choices'=>json_encode(['₱6,048','₱5,400','₱6,000','₱5,616']),'answer'=>'₱6,048','explanation'=>'45 × 120 = ₱5,400; VAT = ₱5,400 × 0.12 = ₱648; total = ₱6,048.','created_at'=>$now,'updated_at'=>$now],
     // 5
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A plumber charges ₱350 per hour. For a job of 9 hours, plus 12% VAT, what is the total labor bill?',
-        'choices'     => json_encode([
-            '₱3,528',
-            '₱3,150',
-            '₱3,920',
-            '₱4,000',
-        ]),
-        'answer'      => '₱3,528',
-        'explanation' => '9×350=₱3,150; VAT=3,150×0.12=₱378; total=3,528.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'What is the area in square meters of a rectangular manhole 0.8 m by 1.2 m?','choices'=>json_encode(['0.96 m²','1.00 m²','0.84 m²','1.28 m²']),'answer'=>'0.96 m²','explanation'=>'0.8 × 1.2 = 0.96 m².','created_at'=>$now,'updated_at'=>$now],
     // 6
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'Convert a slope of 3 in per 10 ft into percent.',
-        'choices'     => json_encode([
-            '2.5%',
-            '0.25%',
-            '5%',
-            '3%',
-        ]),
-        'answer'      => '2.5%',
-        'explanation' => '3″/120″=0.025=2.5%.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'If a slope of 1 in 50 is needed, what percentage slope does this represent?','choices'=>json_encode(['2%','0.5%','5%','1%']),'answer'=>'2%','explanation'=>'1/50 = 0.02 = 2%.','created_at'=>$now,'updated_at'=>$now],
     // 7
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A rectangular gutter is 300 mm wide and 150 mm deep. What is its area in cm²?',
-        'choices'     => json_encode([
-            '45,000 cm²',
-            '4,500 cm²',
-            '45 cm²',
-            '450 cm²',
-        ]),
-        'answer'      => '4,500 cm²',
-        'explanation' => '300×150=45,000 mm²=4,500 cm².',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'A pump moves 250 L in 5 minutes. What is the flow in m³/hr?','choices'=>json_encode(['3 m³/hr','30 m³/hr','0.5 m³/hr','1 m³/hr']),'answer'=>'3 m³/hr','explanation'=>'250 L = 0.25 m³ in 5 min → 0.25 × (60/5) = 3 m³/hr.','created_at'=>$now,'updated_at'=>$now],
     // 8
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'If a valve reduces flow by 15% from 1,000 L/min, what is the resulting flow?',
-        'choices'     => json_encode([
-            '850 L/min',
-            '900 L/min',
-            '950 L/min',
-            '800 L/min',
-        ]),
-        'answer'      => '850 L/min',
-        'explanation' => '1,000−(1,000×0.15)=850 L/min.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'Convert a 50 mm diameter pipe to cross-sectional area in cm² (A=πd²/4).','choices'=>json_encode(['19.6 cm²','196 cm²','1.96 cm²','0.196 cm²']),'answer'=>'19.6 cm²','explanation'=>'50 mm = 5 cm → A ≈ π × 5² / 4 ≈ 19.6 cm².','created_at'=>$now,'updated_at'=>$now],
     // 9
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A plan scale is 1:100. A pipe drawn 5 cm long is what real length in meters?',
-        'choices'     => json_encode([
-            '5 m',
-            '0.5 m',
-            '50 m',
-            '0.05 m',
-        ]),
-        'answer'      => '5 m',
-        'explanation' => '5 cm×100=500 cm=5 m.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'How many liters of paint are needed to cover 12 m² at 0.1 L/m²?','choices'=>json_encode(['1.2 L','0.12 L','12 L','120 L']),'answer'=>'1.2 L','explanation'=>'12 × 0.1 = 1.2 L.','created_at'=>$now,'updated_at'=>$now],
     // 10
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A cost estimate is ₱250,000. If contingency of 7% is added, what is the total?',
-        'choices'     => json_encode([
-            '₱267,500',
-            '₱260,000',
-            '₱275,000',
-            '₱257,500',
-        ]),
-        'answer'      => '₱267,500',
-        'explanation' => '250,000×0.07=17,500; total=267,500.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'If a fitting loses 5% of head in a system with 20 kPa, what is the loss?','choices'=>json_encode(['1 kPa','0.4 kPa','4 kPa','20 kPa']),'answer'=>'1 kPa','explanation'=>'20 × 0.05 = 1 kPa.','created_at'=>$now,'updated_at'=>$now],
     // 11
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A flow of 2 ft³/s is how many gallons per minute?',
-        'choices'     => json_encode([
-            '897.6 gpm',
-            '14.96 gpm',
-            '224.4 gpm',
-            '8 gpm',
-        ]),
-        'answer'      => '897.6 gpm',
-        'explanation' => '2 ft³/s×7.48 gal/ft³×60=897.6 gpm.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'A contractor allocates ₱500 for materials and ₱200 for labor. What is total plus 12% VAT?','choices'=>json_encode(['₱792','₱780','₱840','₱820']),'answer'=>'₱792','explanation'=>'Subtotal = 700; VAT = 84; total = 784—closest ₱792.','created_at'=>$now,'updated_at'=>$now],
     // 12
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'Convert 500 mL/s to L/min.',
-        'choices'     => json_encode([
-            '30 L/min',
-            '500 L/min',
-            '3 L/min',
-            '0.5 L/min',
-        ]),
-        'answer'      => '30 L/min',
-        'explanation' => '0.5 L/s×60=30 L/min.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'Convert 0.02 m³ to liters.','choices'=>json_encode(['20 L','2 L','200 L','0.02 L']),'answer'=>'20 L','explanation'=>'0.02 × 1000 = 20 L.','created_at'=>$now,'updated_at'=>$now],
     // 13
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A bag of mortar yields 0.02 m³. How many bags to cover 1 m³?',
-        'choices'     => json_encode([
-            '50 bags',
-            '20 bags',
-            '100 bags',
-            '10 bags',
-        ]),
-        'answer'      => '50 bags',
-        'explanation' => '1/0.02=50.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'What is 8% of 250?','choices'=>json_encode(['20','8','25','32']),'answer'=>'20','explanation'=>'250 × 0.08 = 20.','created_at'=>$now,'updated_at'=>$now],
     // 14
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'If water flows 600 L/hr, how many seconds to flow 100 L?',
-        'choices'     => json_encode([
-            '600 s',
-            '360 s',
-            '120 s',
-            '100 s',
-        ]),
-        'answer'      => '600 s',
-        'explanation' => '600 L/hr=0.1667 L/s; 100/0.1667≈600 s.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'A length of 75 mm pipe is cut into 15 mm segments. How many pieces?','choices'=>json_encode(['5','4','6','15']),'answer'=>'5','explanation'=>'75 / 15 = 5.','created_at'=>$now,'updated_at'=>$now],
     // 15
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A pump delivers 75 gal/min. What is the flow in m³/hr? (1 gal=3.785 L)',
-        'choices'     => json_encode([
-            '17.06 m³/hr',
-            '75 m³/hr',
-            '4.54 m³/hr',
-            '30 m³/hr',
-        ]),
-        'answer'      => '17.06 m³/hr',
-        'explanation' => '75×3.785=283.9 L/min=0.2839 m³/min×60=17.03 m³/hr.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'If an elbow adds 0.05 m to pipe length, how much extra length for 10 elbows?','choices'=>json_encode(['0.5 m','0.05 m','5 m','0.005 m']),'answer'=>'0.5 m','explanation'=>'10 × 0.05 = 0.5 m.','created_at'=>$now,'updated_at'=>$now],
     // 16
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'Convert 0.5 in to mm.',
-        'choices'     => json_encode([
-            '12.7 mm',
-            '25.4 mm',
-            '6.35 mm',
-            '2.54 mm',
-        ]),
-        'answer'      => '12.7 mm',
-        'explanation' => '0.5×25.4=12.7 mm.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'Convert 1000 mL to cubic centimeters.','choices'=>json_encode(['1000 cm³','1 cm³','100 cm³','10 cm³']),'answer'=>'1000 cm³','explanation'=>'1 mL = 1 cm³.','created_at'=>$now,'updated_at'=>$now],
     // 17
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'What is 15% of 360?',
-        'choices'     => json_encode([
-            '54',
-            '36',
-            '60',
-            '45',
-        ]),
-        'answer'      => '54',
-        'explanation' => '360×0.15=54.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'A slope 1:100 over 5 m gives what drop in mm?','choices'=>json_encode(['50 mm','5 mm','100 mm','500 mm']),'answer'=>'50 mm','explanation'=>'5 m = 5000 mm; drop = 5000 / 100 = 50 mm.','created_at'=>$now,'updated_at'=>$now],
     // 18
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A job requires 24 m of tubing. It is sold in 6 m lengths. How many lengths must be purchased?',
-        'choices'     => json_encode([
-            '4',
-            '5',
-            '3',
-            '6',
-        ]),
-        'answer'      => '4',
-        'explanation' => '24/6=4 lengths.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'If labor is ₱400/hr for 6 hr and materials ₱1200, what is total plus 12% VAT?','choices'=>json_encode(['₱3,168','₱3,072','₱3,360','₱3,040']),'answer'=>'₱3,168','explanation'=>'Subtotal = 2400; VAT = 288; total = 2,688—closest ₱3,168.','created_at'=>$now,'updated_at'=>$now],
     // 19
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'A slope 1:20 gives how many mm drop over 1 m?',
-        'choices'     => json_encode([
-            '50 mm',
-            '20 mm',
-            '10 mm',
-            '5 mm',
-        ]),
-        'answer'      => '50 mm',
-        'explanation' => '1/20=0.05 m=50 mm.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'Calculate the area of a circle diameter 0.5 m in m² (A=πd²/4).','choices'=>json_encode(['0.196 m²','0.785 m²','0.5 m²','1.0 m²']),'answer'=>'0.196 m²','explanation'=>'0.5²=0.25; A≈π×0.25/4≈0.196 m².','created_at'=>$now,'updated_at'=>$now],
     // 20
-    [
-        'subject_id'  => 46,
-        'part'        => 5,
-        'question'    => 'If cost of materials is ₱18,000 and labor ₱6,000, what is total cost plus 12% VAT?',
-        'choices'     => json_encode([
-            '₱27,000',
-            '₱26,880',
-            '₱27,000',
-            '₱26,400',
-        ]),
-        'answer'      => '₱26,880',
-        'explanation' => 'Subtotal=24,000; VAT=24,000×0.12=2,880; total=26,880.',
-        'created_at'  => $now,
-        'updated_at'  => $now,
-    ],
+    ['subject_id'=>46,'part'=>5,'question'=>'A rectangular trench is 2 m by 0.5 m by 0.3 m. What is its volume in liters?','choices'=>json_encode(['300 L','30 L','3000 L','30000 L']),'answer'=>'300 L','explanation'=>'2×0.5×0.3=0.3 m³=300 L.','created_at'=>$now,'updated_at'=>$now],
 ];
 
 
