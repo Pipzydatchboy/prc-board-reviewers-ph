@@ -19,9 +19,7 @@ export default function Exams({ exams, seo }: ExamsProps) {
 
   const comingSoon = [
     'NAPOLCOM Exam',
-    'Librarian Licensure Exam',
     'PNPA Cadet Admission Test',
-    'Fire Officer Exam',
     'Customs Broker Licensure Exam',
   ];
 

@@ -99,7 +99,18 @@ class SubjectController extends Controller
                 ['id' => 48, 'name' => 'Plumbing Code'],
                 ['id' => 49, 'name' => 'Practical Problems & Experiences'],
             ];
-        } 
+        }   elseif ($examId == 9) { // LLE
+            $examName = 'Librarian Licensure Examination (LLE)';
+            $subjects = [
+                ['id' => 50, 'name' => 'Library Organization & Management'],
+                ['id' => 51, 'name' => 'Reference, Bibliography & User Services'],
+                ['id' => 52, 'name' => 'Indexing & Abstracting'],
+                ['id' => 53, 'name' => 'Cataloging & Classification'],
+                ['id' => 54, 'name' => 'Selection & Acquisition'],
+                ['id' => 55, 'name' => 'Information Technology'],
+            ];
+        }  
+
 
         // Build SEO metadata
         $now = Carbon::now();

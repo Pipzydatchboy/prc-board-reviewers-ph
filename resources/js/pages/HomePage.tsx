@@ -53,7 +53,7 @@ const HomePage: React.FC<HomePageProps> = ({ seo }) => {
     { title: 'Licensure Exam for Teachers (LET)', desc: 'GenEd, ProfEd, and Major Subjects.', link: '/let-reviewers' },
     { title: 'Criminology Board Exam', desc: 'Prepare for Criminology licensure.', link: '/cle-reviewers' },
     { title: 'NAPOLCOM Exam', desc: 'Entrance and Promotional levels.', comingSoon: true },
-    { title: 'Librarian Licensure Exam', desc: 'Ace the Librarian board exam.', comingSoon: true },
+    { title: 'Librarian Licensure Exam', desc: 'Ace the Librarian board exam.', link: '/lle-reviewers' },
     { title: 'Midwifery Licensure Exam', desc: 'Review for Midwifery board exam.', link: '/mle-reviewers' },
   ];
 

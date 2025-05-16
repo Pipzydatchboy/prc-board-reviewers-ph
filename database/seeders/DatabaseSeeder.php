@@ -549,15 +549,15 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart7Seeder::class,
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart8Seeder::class,
 		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart9Seeder::class,
-		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart10Seeder::class, */
+		\Database\Seeders\FOE\AdministrativeMatters\AdministrativeMattersPart10Seeder::class, 
 
 //MPLE - PlumbingArithmetic - ID 46
 		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart1Seeder::class,
-		/*\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart2Seeder::class,
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart2Seeder::class,
 		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart3Seeder::class, 
-		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart4Seeder::class, */
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart4Seeder::class, 
 		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart5Seeder::class, 
-		/*\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart6Seeder::class,
+		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart6Seeder::class,
 		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart7Seeder::class,
 		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart8Seeder::class,
 		\Database\Seeders\MPLE\PlumbingArithmetic\PlumbingArithmeticPart9Seeder::class, 
@@ -600,8 +600,80 @@ class DatabaseSeeder extends Seeder
 		\Database\Seeders\MPLE\PracticalProblemsAndExperiences\PracticalProblemsAndExperiencesPart10Seeder::class, */
 
 
-         /*\Database\Seeders\SubjectsTableSeeder::class,
-          \Database\Seeders\ExamsTableSeeder::class, */
+//LLE - LibraryOrganizationAndManagement - ID 50
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart1Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart2Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart3Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart4Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart5Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart6Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart7Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart8Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart9Seeder::class,
+		\Database\Seeders\LLE\LibraryOrganizationAndManagement\LibraryOrganizationAndManagementPart10Seeder::class,
+
+//LLE - LibraryOrganizationAndManagement - ID 51
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart1Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart2Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart3Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart4Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart5Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart6Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart7Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart8Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart9Seeder::class,
+		\Database\Seeders\LLE\ReferenceBibliographyAndUserServices\ReferenceBibliographyAndUserServicesPart10Seeder::class,  
+
+//LLE - LibraryOrganizationAndManagement - ID 52
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart1Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart2Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart3Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart4Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart5Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart6Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart7Seeder::class, 
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart8Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart9Seeder::class,
+		\Database\Seeders\LLE\IndexingAndAbstracting\IndexingAndAbstractingPart10Seeder::class,
+
+//LLE - CatalogingAndClassification - ID 53
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart1Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart2Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart3Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart4Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart5Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart6Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart7Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart8Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart9Seeder::class,
+		\Database\Seeders\LLE\CatalogingAndClassification\CatalogingAndClassificationPart10Seeder::class,
+
+//LLE - SelectionAndAcquisition - ID 54
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart1Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart2Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart3Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart4Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart5Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart6Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart7Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart8Seeder::class, 
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart9Seeder::class,
+		\Database\Seeders\LLE\SelectionAndAcquisition\SelectionAndAcquisitionPart10Seeder::class,
+
+//LLE - InformationTechnology - ID 55
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart1Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart2Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart3Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart4Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart5Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart6Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart7Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart8Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart9Seeder::class,
+		\Database\Seeders\LLE\InformationTechnology\InformationTechnologyPart10Seeder::class,
+
+         \Database\Seeders\SubjectsTableSeeder::class,
+          \Database\Seeders\ExamsTableSeeder::class, 
              
              
         ]);

@@ -53,7 +53,8 @@ Route::get('/foe-reviewers', [SubjectController::class, 'index'])
      ->defaults('exam', 7)->name('foe.reviewers');
 Route::get('/mple-reviewers', [SubjectController::class, 'index'])
      ->defaults('exam', 8)->name('mple.reviewers');
-
+Route::get('/lle-reviewers', [SubjectController::class, 'index'])
+     ->defaults('exam', 8)->name('lle.reviewers');
 // … repeat for let, cle, mle, mtle, cele, foe …
 
 // Generic subjects / parts / questions

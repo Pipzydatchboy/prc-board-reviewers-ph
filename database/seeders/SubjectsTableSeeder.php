@@ -54,11 +54,17 @@ class SubjectsTableSeeder extends Seeder
           ['id' => 42, 'name' => 'Fire Suppression', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 43, 'name' => 'Fire Safety & Prevention', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 44, 'name' => 'Fire Investigation', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 45, 'name' => 'Administrative Matters', 'created_at' => now(), 'updated_at' => now()],*/
+          ['id' => 45, 'name' => 'Administrative Matters', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 46, 'name' => 'Plumbing Arithmetic', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 47, 'name' => 'Sanitation, Plumbing Design & Installation', 'created_at' => now(), 'updated_at' => now()],
           ['id' => 48, 'name' => 'Plumbing Code', 'created_at' => now(), 'updated_at' => now()],
-          ['id' => 49, 'name' => 'Practical Problems & Experiences', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 49, 'name' => 'Practical Problems & Experiences', 'created_at' => now(), 'updated_at' => now()], */
+          ['id' => 50, 'name' => 'Library Organization & Management', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 51, 'name' => 'Reference, Bibliography & User Services', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 52, 'name' => 'Indexing & Abstracting', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 53, 'name' => 'Cataloging & Classification', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 54, 'name' => 'Selection & Acquisition', 'created_at' => now(), 'updated_at' => now()],
+          ['id' => 55, 'name' => 'Information Technology', 'created_at' => now(), 'updated_at' => now()],
           // …add more as needed…
         ]);
     }
