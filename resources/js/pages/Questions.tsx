@@ -38,7 +38,15 @@ export type QuestionsProps = {
   seo: SeoProps;
 };
 
-const shuffleQuestions = (arr: Question[]) => [...arr].sort(() => Math.random() - 0.5);
+// Fisher–Yates shuffle utility
+const shuffleArray = <T,>(arr: T[]): T[] => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
 
 const Questions: React.FC<QuestionsProps> = ({
   questions,
@@ -49,7 +57,7 @@ const Questions: React.FC<QuestionsProps> = ({
   seo,
 }) => {
   const [showIntro, setShowIntro] = useState(true);
-  const [shuffled, setShuffled] = useState<Question[]>(() => shuffleQuestions(questions));
+  const [shuffled, setShuffled] = useState<Question[]>([]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [score, setScore] = useState(0);
@@ -62,18 +70,38 @@ const Questions: React.FC<QuestionsProps> = ({
   useEffect(() => {
     timerRef.current = window.setInterval(() => setElapsed(e => e + 1), 1000);
     return () => {
-      if (timerRef.current) {
-        window.clearInterval(timerRef.current);
-      }
+      if (timerRef.current) window.clearInterval(timerRef.current);
     };
   }, []);
 
   // Stop timer when summary is shown
   useEffect(() => {
-    if (showSummary && timerRef.current) {
-      window.clearInterval(timerRef.current);
-    }
+    if (showSummary && timerRef.current) window.clearInterval(timerRef.current);
   }, [showSummary]);
+
+  // Prepare quiz: shuffle questions and each one's choices
+  const prepareQuiz = useCallback(() => {
+    const qShuffled = shuffleArray(questions).map(q => {
+      const choices = shuffleArray(q.choices);
+      return { ...q, choices };
+    });
+    setShuffled(qShuffled);
+    setIndex(0);
+    setSelected(null);
+    setScore(0);
+    setUserAnswers([]);
+    setShowSummary(false);
+    setElapsed(0);
+
+    // Reset timer
+    if (timerRef.current) window.clearInterval(timerRef.current);
+    timerRef.current = window.setInterval(() => setElapsed(e => e + 1), 1000);
+  }, [questions]);
+
+  // Initialize on mount
+  useEffect(() => {
+    prepareQuiz();
+  }, [prepareQuiz]);
 
   // Handle choice and record progress
   const handleChoice = useCallback((choice: string) => {
@@ -152,7 +180,7 @@ const Questions: React.FC<QuestionsProps> = ({
             percentage={percentage}
             formatElapsedTime={`${Math.floor(elapsed / 60)}m ${elapsed % 60}s`}
             passed={passed}
-            onRetake={() => window.location.reload()}
+            onRetake={prepareQuiz}
             onNextPart={() => router.visit(`/exams/${examId}/subjects/${subjectId}/parts/${part + 1}/questions`)}
             userAnswers={userAnswers}
           />

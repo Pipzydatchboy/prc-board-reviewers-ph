@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, router } from '@inertiajs/react';
 import Layout from '../layouts/Layout';
+import Breadcrumbs from '../components/breadcrumbs';
 
 type SeoProps = {
   title: string;
@@ -21,6 +22,11 @@ export default function Donation({ seo }: DonationProps) {
     setTimeout(() => window.print(), 100);
   };
 
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Donation' }
+  ];
+
   return (
     <Layout>
       <Head>
@@ -33,6 +39,10 @@ export default function Donation({ seo }: DonationProps) {
         <meta property="og:image" content="https://prcboardreviewersph.com/images/og-donation.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+
+      <div className="max-w-4xl mx-auto p-6">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
 
       <div className="bg-green-50 py-12">
         <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
@@ -63,10 +73,10 @@ export default function Donation({ seo }: DonationProps) {
               I’ve Donated!
             </button>
             <button
-              onClick={handlePrint}
+              onClick={() => router.visit(route('donations.proof'))}
               className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition"
             >
-              Print QR Code
+              View Proof of Donation
             </button>
           </div>
 

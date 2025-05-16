@@ -11,7 +11,7 @@ class ExamController extends Controller
      */
     public function index()
     {
-        // Static exam list for now
+        // Original static exam list with correct IDs
         $exams = [
             ['id' => 1, 'name' => 'Civil Service Exam (CSE)'],
             ['id' => 2, 'name' => 'Licensure Examination for Teachers (LET)'],
@@ -22,8 +22,13 @@ class ExamController extends Controller
             ['id' => 7, 'name' => 'Fire Officer Examination (FOE)'],
             ['id' => 8, 'name' => 'Master Plumber Licensure Examination (MPLE)'],
             ['id' => 9, 'name' => 'Librarian Licensure Examination (LLE)'],
-
         ];
+
+        // Sort exams alphabetically A-Z by name, preserving original IDs
+        $exams = collect($exams)
+            ->sortBy('name')
+            ->values()
+            ->all();
 
         // SEO metadata
         $seo = [
