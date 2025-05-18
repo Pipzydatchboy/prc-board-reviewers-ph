@@ -35,6 +35,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             OneSignal.init({
               appId: 'e5530784-caef-4c7b-8a92-fdd8a0379016'
             });
+            // Automatically prompt the user for notification permission
+            OneSignal.showNativePrompt();
+          });
           });
         `}} />
       </Head>
