@@ -22,7 +22,22 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       {/* Inertia Head (for page titles, meta tags, etc.) */}
-      <Head />
+      <Head>
+        {/* OneSignal SDK loader */}
+        <script
+          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+          defer
+        />
+        {/* OneSignal init for production */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.OneSignal = window.OneSignal || [];
+          OneSignal.push(function() {
+            OneSignal.init({
+              appId: 'e5530784-caef-4c7b-8a92-fdd8a0379016'
+            });
+          });
+        `}} />
+      </Head>
 
       {/* Navbar */}
       <nav className="bg-green-700 text-white shadow-md">
@@ -82,13 +97,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Footer */}
       <footer className="bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm">
-        © {new Date().getFullYear()} PRC Board Reviewers PH. All rights reserved.{' '}
-            <Link href="/privacy-policy" className="underline hover:text-yellow-300">
-               Privacy Policy
-            </Link>
-       </div>
-</footer>
-
+          © {new Date().getFullYear()} PRC Board Reviewers PH. All rights reserved. {' '}
+          <Link href="/privacy-policy" className="underline hover:text-yellow-300">
+            Privacy Policy
+          </Link>
+        </div>
+      </footer>
     </>
   );
 };
