@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 use Inertia\Inertia;
 use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ExamController;
@@ -14,6 +16,8 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ProofOfDonationController;
 use App\Http\Controllers\PrivacyPolicyController;
+use App\Models\Subject;    // make sure these exist
+use App\Models\Part;       // make sure these exist
 
 /*
 |--------------------------------------------------------------------------
@@ -86,28 +90,77 @@ Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($ex
 |--------------------------------------------------------------------------
 */
 
-// Dynamic sitemap.xml (cached 24h)
 Route::get('/sitemap.xml', function () {
+    // Build & cache for 24h
     $xml = Cache::remember('sitemap-xml', now()->addDay(), function () {
-        // generate sitemap into storage/app/sitemap.xml
         $path = storage_path('app/sitemap.xml');
-        SitemapGenerator::create(url('/'))->writeToFile($path);
-        // return its contents
+
+        // Start a new sitemap
+        $sitemap = Sitemap::create()
+            // Static pages
+            ->add(Url::create(url('/'))->setPriority(1.0)->setChangeFrequency('daily'))
+            ->add(Url::create(url('/about'))->setChangeFrequency('monthly'))
+            ->add(Url::create(url('/donation')))
+            ->add(Url::create(url('/donations/proof')))
+            ->add(Url::create(url('/privacy-policy')))
+            ->add(Url::create(url('/exams')));
+
+        // Alias pages
+        $aliases = [
+            'cse.reviewers' => [],
+            'let.reviewers' => [],
+            'cle.reviewers' => [],
+            'mle.reviewers' => [],
+            'mtle.reviewers' => [],
+            'cele.reviewers' => [],
+            'foe.reviewers' => [],
+            'mple.reviewers' => [],
+            'lle.reviewers' => [],
+        ];
+        foreach (array_keys($aliases) as $routeName) {
+            $sitemap->add(Url::create(route($routeName)));
+        }
+
+        // Dynamic: subjects → parts → quiz/result
+        // Assumes Subject and Part models exist and match your DB
+        foreach (Subject::all() as $subject) {
+            $exam  = $subject->exam;    // or however you link exam
+            $sitemap->add(
+                Url::create(route('parts.index', [
+                    'exam'    => $exam,
+                    'subject' => $subject->id,
+                ]))
+            );
+
+            foreach (Part::where('subject_id', $subject->id)->get() as $part) {
+                $sitemap->add(Url::create(route('quiz.index', [
+                    'exam'    => $exam,
+                    'subject' => $subject->id,
+                    'part'    => $part->number,
+                ])));
+                $sitemap->add(Url::create(route('results.show', [
+                    'exam'    => $exam,
+                    'subject' => $subject->id,
+                    'part'    => $part->number,
+                ])));
+            }
+        }
+
+        // Write & return
+        $sitemap->writeToFile($path);
         return file_get_contents($path);
     });
 
     return response($xml, 200, ['Content-Type' => 'application/xml']);
 });
 
-// Robots.txt
+// robots.txt
 Route::get('/robots.txt', function () {
     $content  = "User-agent: *\n";
     $content .= "Allow: /\n\n";
     $content .= "Sitemap: " . url('/sitemap.xml');
 
-    return response($content, 200, [
-        'Content-Type' => 'text/plain',
-    ]);
+    return response($content, 200, ['Content-Type' => 'text/plain']);
 });
 
 /*
@@ -139,3 +192,4 @@ Route::fallback(function() {
 */
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
+
