@@ -89,9 +89,10 @@ Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($ex
 // Dynamic sitemap.xml (cached 24h)
 Route::get('/sitemap.xml', function () {
     $xml = Cache::remember('sitemap-xml', now()->addDay(), function () {
-        // Generate into storage and return contents
+        // generate sitemap into storage/app/sitemap.xml
         $path = storage_path('app/sitemap.xml');
         SitemapGenerator::create(url('/'))->writeToFile($path);
+        // return its contents
         return file_get_contents($path);
     });
 
