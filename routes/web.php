@@ -3,9 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 use Inertia\Inertia;
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ExamController;
@@ -16,8 +13,6 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ProofOfDonationController;
 use App\Http\Controllers\PrivacyPolicyController;
-use App\Models\Subject;    // make sure these exist
-use App\Models\Part;       // make sure these exist
 
 /*
 |--------------------------------------------------------------------------
@@ -69,20 +64,27 @@ Route::group([], function () {
 
 // Generic subjects / parts / questions
 Route::get('/exams/{exam}/subjects', [SubjectController::class, 'index'])
-    ->name('subjects.index');
+     ->name('subjects.index');
 Route::get('/exams/{exam}/subjects/{subject}/parts', [PartController::class, 'index'])
-    ->name('parts.index');
-Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/questions', [QuestionController::class, 'index'])
-    ->name('questions.index');
+     ->name('parts.index');
+Route::get(
+    '/exams/{exam}/subjects/{subject}/parts/{part}/questions',
+    [QuestionController::class, 'index']
+)->name('questions.index');
 
 // Quiz Page (Inertia-driven)
-Route::get('/exams/{exam}/subjects/{subject}/parts/{part}', [QuizController::class, 'index'])
-    ->name('quiz.index');
+Route::get(
+    '/exams/{exam}/subjects/{subject}/parts/{part}',
+    [QuizController::class, 'index']
+)->name('quiz.index');
 
 // Result Page (Blade/Inertia)
-Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($exam, $subject, $part) {
-    return Inertia::render('ResultPage', compact('exam','subject','part'));
-})->name('results.show');
+Route::get(
+    '/exams/{exam}/subjects/{subject}/parts/{part}/result',
+    function ($exam, $subject, $part) {
+        return Inertia::render('ResultPage', compact('exam','subject','part'));
+    }
+)->name('results.show');
 
 /*
 |--------------------------------------------------------------------------
@@ -90,71 +92,45 @@ Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($ex
 |--------------------------------------------------------------------------
 */
 
+// Simple, hand-crafted sitemap (cached 24h)
 Route::get('/sitemap.xml', function () {
-    // Build & cache for 24h
     $xml = Cache::remember('sitemap-xml', now()->addDay(), function () {
-        $path = storage_path('app/sitemap.xml');
-
-        // Start a new sitemap
-        $sitemap = Sitemap::create()
-            // Static pages
-            ->add(Url::create(url('/'))->setPriority(1.0)->setChangeFrequency('daily'))
-            ->add(Url::create(url('/about'))->setChangeFrequency('monthly'))
-            ->add(Url::create(url('/donation')))
-            ->add(Url::create(url('/donations/proof')))
-            ->add(Url::create(url('/privacy-policy')))
-            ->add(Url::create(url('/exams')));
-
-        // Alias pages
-        $aliases = [
-            'cse.reviewers' => [],
-            'let.reviewers' => [],
-            'cle.reviewers' => [],
-            'mle.reviewers' => [],
-            'mtle.reviewers' => [],
-            'cele.reviewers' => [],
-            'foe.reviewers' => [],
-            'mple.reviewers' => [],
-            'lle.reviewers' => [],
+        $urls = [
+            url('/'),
+            url('/about'),
+            url('/donation'),
+            url('/donations/proof'),
+            url('/privacy-policy'),
+            url('/exams'),
+            url('/cse-reviewers'),
+            url('/let-reviewers'),
+            url('/cle-reviewers'),
+            url('/mle-reviewers'),
+            url('/mtle-reviewers'),
+            url('/cele-reviewers'),
+            url('/foe-reviewers'),
+            url('/mple-reviewers'),
+            url('/lle-reviewers'),
         ];
-        foreach (array_keys($aliases) as $routeName) {
-            $sitemap->add(Url::create(route($routeName)));
+
+        $xml  = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+        foreach ($urls as $u) {
+            $xml .= "  <url>\n";
+            $xml .= "    <loc>{$u}</loc>\n";
+            $xml .= "  </url>\n";
         }
 
-        // Dynamic: subjects → parts → quiz/result
-        // Assumes Subject and Part models exist and match your DB
-        foreach (Subject::all() as $subject) {
-            $exam  = $subject->exam;    // or however you link exam
-            $sitemap->add(
-                Url::create(route('parts.index', [
-                    'exam'    => $exam,
-                    'subject' => $subject->id,
-                ]))
-            );
+        $xml .= '</urlset>';
 
-            foreach (Part::where('subject_id', $subject->id)->get() as $part) {
-                $sitemap->add(Url::create(route('quiz.index', [
-                    'exam'    => $exam,
-                    'subject' => $subject->id,
-                    'part'    => $part->number,
-                ])));
-                $sitemap->add(Url::create(route('results.show', [
-                    'exam'    => $exam,
-                    'subject' => $subject->id,
-                    'part'    => $part->number,
-                ])));
-            }
-        }
-
-        // Write & return
-        $sitemap->writeToFile($path);
-        return file_get_contents($path);
+        return $xml;
     });
 
     return response($xml, 200, ['Content-Type' => 'application/xml']);
 });
 
-// robots.txt
+// Robots.txt
 Route::get('/robots.txt', function () {
     $content  = "User-agent: *\n";
     $content .= "Allow: /\n\n";
@@ -168,8 +144,8 @@ Route::get('/robots.txt', function () {
 | Authenticated Routes (Dashboard)
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth','verified'])->group(function() {
-    Route::get('/dashboard', function() {
+Route::middleware(['auth','verified'])->group(function () {
+    Route::get('/dashboard', function () {
         return Inertia::render('Dashboard', [
             'title' => 'My Dashboard | PRC Board Reviewers PH',
         ]);
@@ -181,7 +157,7 @@ Route::middleware(['auth','verified'])->group(function() {
 | Fallback 404 → Home
 |--------------------------------------------------------------------------
 */
-Route::fallback(function() {
+Route::fallback(function () {
     return redirect()->route('home');
 });
 
@@ -192,4 +168,3 @@ Route::fallback(function() {
 */
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
-
