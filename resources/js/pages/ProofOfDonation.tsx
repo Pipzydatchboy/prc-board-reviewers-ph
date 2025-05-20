@@ -5,7 +5,6 @@ import Layout from '../layouts/Layout';
 import Breadcrumbs from '../components/breadcrumbs';
 
 type Props = {
-  images: string[];
   seo: {
     title: string;
     description: string;
@@ -14,7 +13,7 @@ type Props = {
   };
 };
 
-export default function ProofOfDonation({ images, seo }: Props) {
+export default function ProofOfDonation({ seo }: Props) {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
     { label: seo.heading }
@@ -43,21 +42,44 @@ export default function ProofOfDonation({ images, seo }: Props) {
             {seo.heading}
           </h1>
           <p className="text-lg text-gray-800 mb-8 text-center">
-            Thank you to everyone who has donated via GCash. Below are the proofs of donations that keep our platform free and up-to-date.
+            Thank you to everyone who has donated via GCash. Below is our official record of donations that help keep this platform free and updated.
           </p>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {images.length > 0 ? (
-              images.map((url, idx) => (
-                <div key={idx} className="border rounded-lg overflow-hidden">
-                  <img src={url} alt={`Donation proof ${idx + 1}`} className="w-full h-auto" />
-                </div>
-              ))
-            ) : (
-              <p className="text-center text-gray-600 col-span-full">
-                No donation proofs available at the moment.
-              </p>
-            )}
+          {/* Donation Records Table */}
+          <div className="overflow-x-auto mb-8">
+            <table className="min-w-full bg-white shadow rounded-lg">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Date</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Reference No.</th>
+                  <th className="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider">Amount</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap">May 20, 2025</td>
+                  <td className="px-6 py-4 whitespace-nowrap">1028882862690</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right">₱ 40.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap">May 11, 2025</td>
+                  <td className="px-6 py-4 whitespace-nowrap">9028575847182</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right">₱ 1.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap">&nbsp;</td>
+                  <td className="px-6 py-4 whitespace-nowrap">&nbsp;</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right">&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Share Message */}
+          <div className="mt-6 text-center">
+            <p className="text-lg text-gray-700">
+                We will include you in our prayers. Love our free board exam reviewers? 🎉 Spread the word! Share this site with your friends and help us keep everything free and up-to-date for everyone. Thank you for your support!
+            </p>
           </div>
         </div>
       </div>
