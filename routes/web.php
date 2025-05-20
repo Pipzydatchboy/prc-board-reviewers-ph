@@ -42,7 +42,7 @@ Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index'])
 Route::get('/exams', [ExamController::class, 'index'])->name('exams.index');
 
 // SEO-Friendly Reviewer Aliases
-Route::prefix('')->group(function () {
+Route::group([], function () {
     Route::get('/cse-reviewers', [SubjectController::class, 'index'])
          ->defaults('exam', 1)->name('cse.reviewers');
     Route::get('/let-reviewers', [SubjectController::class, 'index'])
@@ -64,16 +64,16 @@ Route::prefix('')->group(function () {
 });
 
 // Generic subjects / parts / questions
-Route::get('/exams/{exam}/subjects',
-    [SubjectController::class, 'index'])->name('subjects.index');
-Route::get('/exams/{exam}/subjects/{subject}/parts',
-    [PartController::class, 'index'])->name('parts.index');
-Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/questions',
-    [QuestionController::class, 'index'])->name('questions.index');
+Route::get('/exams/{exam}/subjects', [SubjectController::class, 'index'])
+    ->name('subjects.index');
+Route::get('/exams/{exam}/subjects/{subject}/parts', [PartController::class, 'index'])
+    ->name('parts.index');
+Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/questions', [QuestionController::class, 'index'])
+    ->name('questions.index');
 
 // Quiz Page (Inertia-driven)
-Route::get('/exams/{exam}/subjects/{subject}/parts/{part}',
-    [QuizController::class, 'index'])->name('quiz.index');
+Route::get('/exams/{exam}/subjects/{subject}/parts/{part}', [QuizController::class, 'index'])
+    ->name('quiz.index');
 
 // Result Page (Blade/Inertia)
 Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($exam, $subject, $part) {
@@ -89,9 +89,9 @@ Route::get('/exams/{exam}/subjects/{subject}/parts/{part}/result', function ($ex
 // Dynamic sitemap.xml (cached 24h)
 Route::get('/sitemap.xml', function () {
     $xml = Cache::remember('sitemap-xml', now()->addDay(), function () {
-        return SitemapGenerator::create(url('/'))
-            ->getSitemap()
-            ->toXml();
+        $sitemap = SitemapGenerator::create(url('/'))->getSitemap();
+        // Cast to string (XML) instead of calling toXml()
+        return (string) $sitemap;
     });
 
     return response($xml, 200, ['Content-Type' => 'application/xml']);
@@ -99,11 +99,13 @@ Route::get('/sitemap.xml', function () {
 
 // Robots.txt
 Route::get('/robots.txt', function () {
-    return response(
-        "User-agent: *\nDisallow:\nSitemap: " . url('/sitemap.xml'),
-        200,
-        ['Content-Type' => 'text/plain']
-    );
+    $content  = "User-agent: *\n";
+    $content .= "Allow: /\n\n";
+    $content .= "Sitemap: " . url('/sitemap.xml');
+
+    return response($content, 200, [
+        'Content-Type' => 'text/plain',
+    ]);
 });
 
 /*
