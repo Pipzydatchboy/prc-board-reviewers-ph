@@ -57,6 +57,11 @@ export default function ProofOfDonation({ seo }: Props) {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr>
+                  <td className="px-6 py-4 whitespace-nowrap">May 21, 2025</td>
+                  <td className="px-6 py-4 whitespace-nowrap">7028909157196</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right">₱ 5.00</td>
+                </tr>
+                <tr>
                   <td className="px-6 py-4 whitespace-nowrap">May 20, 2025</td>
                   <td className="px-6 py-4 whitespace-nowrap">1028882862690</td>
                   <td className="px-6 py-4 whitespace-nowrap text-right">₱ 40.00</td>
