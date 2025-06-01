@@ -7,6 +7,7 @@ use App\Models\Subject;
 use App\Models\Question;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Http\Controllers\GroupModalController; // ← Add this import
 
 class QuestionController extends Controller
 {
@@ -20,16 +21,16 @@ class QuestionController extends Controller
      */
     public function index($examId, $subjectId, $partId)
     {
-        // Fetch exam and subject
+        // 1. Fetch exam and subject
         $exam    = Exam::findOrFail((int) $examId);
         $subject = Subject::findOrFail((int) $subjectId);
 
-        // Retrieve questions for this subject and part
+        // 2. Retrieve all questions for this subject and part
         $questions = Question::where('subject_id', $subject->id)
                              ->where('part', (int) $partId)
                              ->get();
 
-        // Build SEO metadata
+        // 3. Build SEO metadata
         $seo = [
             'title'       => "{$subject->name} Part {$partId} Questions | PRC Board Reviewers PH",
             'description' => "Part {$partId} of {$subject->name} quiz for the {$exam->type}.",
@@ -37,7 +38,16 @@ class QuestionController extends Controller
             'heading'     => "{$subject->name} – Part {$partId}",
         ];
 
-        return Inertia::render('Questions', [
+        // 4. Retrieve the “group modal” props for this exam
+        $groupProps = (new GroupModalController())->propsForQuiz($examId);
+        //    This returns an array with keys:
+        //      - 'hasJoinedGroup'  => (bool)
+        //      - 'fbUrl'           => (string)
+        //      - 'examName'        => (string)
+        //      - 'modalMessage'    => (string)
+
+        // 5. Merge everything and render the Inertia page
+        return Inertia::render('Questions', array_merge([
             'questions'   => $questions,
             'subjectId'   => $subject->id,
             'subjectName' => $subject->name,
@@ -45,6 +55,6 @@ class QuestionController extends Controller
             'examType'    => $exam->type,
             'examId'      => $exam->id,
             'seo'         => $seo,
-        ]);
+        ], $groupProps));
     }
 }

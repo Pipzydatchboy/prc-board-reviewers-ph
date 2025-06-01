@@ -13,6 +13,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ProofOfDonationController;
 use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\GroupModalController; // ← Add this
 
 /*
 |--------------------------------------------------------------------------
@@ -86,6 +87,12 @@ Route::get(
     }
 )->name('results.show');
 
+// Record "I've Joined" click (Group Modal)
+Route::post(
+    '/group-modal/joined/{exam}',
+    [GroupModalController::class, 'joined']
+)->name('group.joined');
+
 /*
 |--------------------------------------------------------------------------
 | Authenticated Routes (Dashboard)
@@ -116,4 +123,3 @@ Route::fallback(function () {
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
 require __DIR__.'/sitemap.php';
-

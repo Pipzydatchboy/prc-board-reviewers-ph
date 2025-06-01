@@ -1,4 +1,5 @@
 // resources/js/pages/ProofOfDonation.tsx
+
 import React from 'react';
 import { Head } from '@inertiajs/react';
 import Layout from '../layouts/Layout';
@@ -50,31 +51,66 @@ export default function ProofOfDonation({ seo }: Props) {
             <table className="min-w-full bg-white shadow rounded-lg text-xs sm:text-sm">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="px-4 sm:px-6 py-2 text-left font-medium uppercase tracking-wider">Date</th>
-                  <th className="px-4 sm:px-6 py-2 text-left font-medium uppercase tracking-wider">Reference No.</th>
-                  <th className="px-4 sm:px-6 py-2 text-right font-medium uppercase tracking-wider">Amount</th>
+                  <th className="px-4 sm:px-6 py-2 text-left font-medium uppercase tracking-wider text-gray-900">
+                    Date
+                  </th>
+                  <th className="px-4 sm:px-6 py-2 text-left font-medium uppercase tracking-wider text-gray-900">
+                    Reference No.
+                  </th>
+                  <th className="px-4 sm:px-6 py-2 text-right font-medium uppercase tracking-wider text-gray-900">
+                    Amount
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">May 21, 2025</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">7028909157196</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right">₱ 5.00</td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    May 23, 2025
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    5028957700445
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right text-gray-900">
+                    ₱ 100.00
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">May 20, 2025</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">1028882862690</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right">₱ 40.00</td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    May 21, 2025
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    7028909157196
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right text-gray-900">
+                    ₱ 5.00
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">May 11, 2025</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">9028575847182</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right">₱ 1.00</td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    May 20, 2025
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    1028882862690
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right text-gray-900">
+                    ₱ 40.00
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">&nbsp;</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap">&nbsp;</td>
-                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right">&nbsp;</td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    May 11, 2025
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">
+                    9028575847182
+                  </td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right text-gray-900">
+                    ₱ 1.00
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">&nbsp;</td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-gray-900">&nbsp;</td>
+                  <td className="px-4 sm:px-6 py-3 whitespace-nowrap text-right text-gray-900">&nbsp;</td>
                 </tr>
               </tbody>
             </table>
