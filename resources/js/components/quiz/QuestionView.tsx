@@ -1,4 +1,5 @@
 import React from 'react';
+import DailyMotivation from '@/components/DailyMotivation';
 
 type Question = {
   id: number;
@@ -54,7 +55,9 @@ const QuestionView: React.FC<QuestionViewProps> = ({
               <button
                 onClick={() => onChoiceClick(choice)}
                 disabled={!!selectedChoice}
-                className={`block w-full text-left p-3 border rounded text-gray-800 ${choiceColor} ${!selectedChoice ? 'hover:bg-gray-100' : ''}`}
+                className={`block w-full text-left p-3 border rounded text-gray-800 ${choiceColor} ${
+                  !selectedChoice ? 'hover:bg-gray-100' : ''
+                }`}
               >
                 {choice}
               </button>
@@ -79,6 +82,9 @@ const QuestionView: React.FC<QuestionViewProps> = ({
         </button>
       )}
     </div>
+
+    {/* Daily motivational message underneath each question */}
+    <DailyMotivation />
   </div>
 );
 
