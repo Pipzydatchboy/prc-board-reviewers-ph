@@ -1,9 +1,10 @@
 // resources/js/pages/About.tsx
+
 import React, { lazy, Suspense } from 'react';
 import Layout from '../layouts/Layout';
 import { Head } from '@inertiajs/react';
 
-// Lazy‑loaded components
+// Lazy-loaded components
 const Breadcrumbs = lazy(() => import('../components/breadcrumbs'));
 const MissionSection = lazy(() => import('../components/MissionSection'));
 const VisionSection = lazy(() => import('../components/VisionSection'));
@@ -52,8 +53,13 @@ const About: React.FC<AboutProps> = ({ seo }) => {
           <Breadcrumbs items={breadcrumbItems} />
         </Suspense>
 
-        {/* Page Header */}
+        {/* Page Header with Logo */}
         <div className="max-w-4xl mx-auto p-6 text-center">
+          <img
+            src="/logo.webp"
+            alt="PRC Board Reviewers PH Logo"
+            className="mx-auto h-20 w-auto mb-4"
+          />
           <h1 className="text-4xl font-bold text-green-700 mb-4">{seo.heading}</h1>
           <p className="text-gray-700 text-lg">
             PRC Board Reviewers PH is dedicated to helping aspiring professionals pass their board exams

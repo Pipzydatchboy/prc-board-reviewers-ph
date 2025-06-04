@@ -21,14 +21,24 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      {/* Inertia Head (for page titles, meta tags, etc.) */}
-      <Head />
+      {/* Inertia Head (for page titles, meta tags, favicon, etc.) */}
+      <Head>
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        {/* Apple touch icon (using logo.webp) */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.webp" />
+      </Head>
 
       {/* Navbar */}
       <nav className="bg-green-700 text-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-2xl font-bold">
+            <Link href="/" className="flex items-center text-2xl font-bold">
+              <img
+                src="/logo.webp"
+                alt="PRC Board Reviewers PH Logo"
+                className="h-8 w-auto mr-2"
+              />
               PRC Board Reviewers PH
             </Link>
 
@@ -82,13 +92,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Footer */}
       <footer className="bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm">
-        © {new Date().getFullYear()} PRC Board Reviewers PH. All rights reserved.{' '}
-            <Link href="/privacy-policy" className="underline hover:text-yellow-300">
-               Privacy Policy
-            </Link>
-       </div>
-</footer>
-
+          © {new Date().getFullYear()} PRC Board Reviewers PH. All rights reserved.{' '}
+          <Link href="/privacy-policy" className="underline hover:text-yellow-300">
+            Privacy Policy
+          </Link>
+        </div>
+      </footer>
     </>
   );
 };
